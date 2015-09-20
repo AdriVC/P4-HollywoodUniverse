@@ -9,12 +9,17 @@ public class Actor {
     protected String nacionality;
     protected int age;
     protected ArrayList <Movie> movies = new ArrayList();
+    protected ArrayList <ArrayList> relaciones = new ArrayList();
     
     public Actor(String name, String nacionality, int age, ArrayList <Movie> movies){
         this.name = name;
         this.nacionality = nacionality;
         this.age = age;
         this.movies = movies;
+        ArrayList<Actor> persona = new ArrayList();
+        this.relaciones.add(persona);
+        ArrayList<String> relacion = new ArrayList();
+        this.relaciones.add(relacion);
     }
     
     public String getName(){
