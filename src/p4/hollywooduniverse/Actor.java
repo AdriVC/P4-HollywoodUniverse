@@ -1,7 +1,6 @@
 
 package p4.hollywooduniverse;
 
-import hollywood.Movie;
 import java.util.ArrayList;
 public class Actor {
     
