@@ -5,6 +5,8 @@
  */
 package p4.hollywooduniverse;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author adrivega
@@ -16,6 +18,12 @@ public class P4_Main extends javax.swing.JFrame {
      */
     public P4_Main() {
         initComponents();
+        jl_titulo.setIcon(new ImageIcon("./Resources/Interface/logo_titulo.png"));
+        jl_b_addActor.setIcon(new ImageIcon("./Resources/Interface/logo_addActor.png"));
+        jl_b_addRelacion.setIcon(new ImageIcon("./Resources/Interface/logo_addRelacion.png"));
+        jl_b_verHistorial.setIcon(new ImageIcon("./Resources/Interface/logo_verHistorial.png"));
+        jl_b_baconNumber.setIcon(new ImageIcon("./Resources/Interface/logo_baconNumber.png"));
+        jl_background.setIcon(new ImageIcon("./Resources/Interface/background.png"));
     }
 
     /**
@@ -27,57 +35,191 @@ public class P4_Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jD_actor = new javax.swing.JDialog();
+        jD_relaciones = new javax.swing.JDialog();
+        jD_historial = new javax.swing.JDialog();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
+        jPanel2 = new javax.swing.JPanel();
+        jl_titulo = new javax.swing.JLabel();
+        jl_b_baconNumber = new javax.swing.JLabel();
+        jl_b_verHistorial = new javax.swing.JLabel();
+        jl_b_addRelacion = new javax.swing.JLabel();
+        jl_b_addActor = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jl_background = new javax.swing.JLabel();
+
+        javax.swing.GroupLayout jD_actorLayout = new javax.swing.GroupLayout(jD_actor.getContentPane());
+        jD_actor.getContentPane().setLayout(jD_actorLayout);
+        jD_actorLayout.setHorizontalGroup(
+            jD_actorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jD_actorLayout.setVerticalGroup(
+            jD_actorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jD_relacionesLayout = new javax.swing.GroupLayout(jD_relaciones.getContentPane());
+        jD_relaciones.getContentPane().setLayout(jD_relacionesLayout);
+        jD_relacionesLayout.setHorizontalGroup(
+            jD_relacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jD_relacionesLayout.setVerticalGroup(
+            jD_relacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jD_historialLayout = new javax.swing.GroupLayout(jD_historial.getContentPane());
+        jD_historial.getContentPane().setLayout(jD_historialLayout);
+        jD_historialLayout.setHorizontalGroup(
+            jD_historialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jD_historialLayout.setVerticalGroup(
+            jD_historialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("HOLLYWOOD UNIVERSE - Por:Adriana Vega & Oscar Carranza");
+        setBackground(new java.awt.Color(255, 153, 51));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setForeground(new java.awt.Color(255, 153, 51));
+        setIconImage((new ImageIcon("./Resources./Interface/background.png").getImage()));
+        setSize(1061,717);
 
-        jLabel1.setText("titulo");
+        jPanel2.setOpaque(false);
 
-        jButton1.setText("jButton1");
+        jl_b_baconNumber.setText("jLabel4");
+        jl_b_baconNumber.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_b_baconNumberMouseClicked(evt);
+            }
+        });
 
-        jButton2.setText("jButton2");
+        jl_b_verHistorial.setText("jLabel3");
+        jl_b_verHistorial.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_b_verHistorialMouseClicked(evt);
+            }
+        });
 
-        jButton3.setText("jButton3");
+        jl_b_addRelacion.setText("jLabel2");
+        jl_b_addRelacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_b_addRelacionMouseClicked(evt);
+            }
+        });
+
+        jl_b_addActor.setText("jLabel1");
+        jl_b_addActor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_b_addActorMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(195, 195, 195)
+                        .addComponent(jl_b_addActor, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jl_b_addRelacion, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jl_b_verHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jl_b_baconNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(150, 150, 150)
+                        .addComponent(jl_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(161, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jl_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 493, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jl_b_addActor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jl_b_addRelacion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jl_b_baconNumber, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jl_b_verHistorial, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jl_background.setBackground(new java.awt.Color(206, 252, 252));
+        jl_background.setOpaque(true);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jl_background, javax.swing.GroupLayout.DEFAULT_SIZE, 1057, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jl_background, javax.swing.GroupLayout.DEFAULT_SIZE, 713, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
+        jLayeredPane1.setLayout(jLayeredPane1Layout);
+        jLayeredPane1Layout.setHorizontalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jLayeredPane1Layout.setVerticalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 36, Short.MAX_VALUE)))
+        );
+        jLayeredPane1.setLayer(jPanel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(272, 272, 272)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton3)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(681, 681, 681)
-                            .addComponent(jButton2))))
-                .addGap(21, 21, 21))
+            .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 358, Short.MAX_VALUE)
-                .addComponent(jButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
-                .addContainerGap())
+            .addComponent(jLayeredPane1)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jl_b_addActorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_addActorMouseClicked
+        
+    }//GEN-LAST:event_jl_b_addActorMouseClicked
+
+    private void jl_b_addRelacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_addRelacionMouseClicked
+        
+    }//GEN-LAST:event_jl_b_addRelacionMouseClicked
+
+    private void jl_b_verHistorialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_verHistorialMouseClicked
+        
+    }//GEN-LAST:event_jl_b_verHistorialMouseClicked
+
+    private void jl_b_baconNumberMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_baconNumberMouseClicked
+        
+    }//GEN-LAST:event_jl_b_baconNumberMouseClicked
 
     /**
      * @param args the command line arguments
@@ -115,9 +257,19 @@ public class P4_Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JDialog jD_actor;
+    private javax.swing.JDialog jD_historial;
+    private javax.swing.JDialog jD_relaciones;
+    private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel jl_b_addActor;
+    private javax.swing.JLabel jl_b_addRelacion;
+    private javax.swing.JLabel jl_b_baconNumber;
+    private javax.swing.JLabel jl_b_verHistorial;
+    private javax.swing.JLabel jl_background;
+    private javax.swing.JLabel jl_titulo;
     // End of variables declaration//GEN-END:variables
+
+
 }
