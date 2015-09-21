@@ -84,8 +84,17 @@ public class P4_Main extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jl_b_relaciones_guardarCambios = new javax.swing.JLabel();
         jP_relaciones_forBackground = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jl_relaciones_background = new javax.swing.JLabel();
         jD_historial = new javax.swing.JDialog();
+        jLayeredPane5 = new javax.swing.JLayeredPane();
+        jP_historial_foreground = new javax.swing.JPanel();
+        jl_historial_titulo = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTA_historial_ultimaEntrada = new javax.swing.JTextArea();
+        jl_b_historial_eliminarEntrada = new javax.swing.JLabel();
+        jP_historial_forBackground = new javax.swing.JPanel();
+        jl_historial_background = new javax.swing.JLabel();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jP_main_foreground = new javax.swing.JPanel();
         jl_titulo = new javax.swing.JLabel();
@@ -449,9 +458,9 @@ public class P4_Main extends javax.swing.JFrame {
 
         jCB_relaciones_relacion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "--", "Amistad", "Familia", "Noviazgo", "Matrimonio", "Divorcio" }));
 
-        jLabel11.setText("Actor 1:");
+        jLabel11.setText("Actor:");
 
-        jLabel12.setText("Actor 2:");
+        jLabel12.setText("Actor:");
 
         jLabel13.setText("Relacion:");
 
@@ -512,18 +521,18 @@ public class P4_Main extends javax.swing.JFrame {
                 .addComponent(jl_b_relaciones_guardarCambios, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jLabel1.setBackground(new java.awt.Color(204, 204, 255));
-        jLabel1.setOpaque(true);
+        jl_relaciones_background.setBackground(new java.awt.Color(204, 204, 255));
+        jl_relaciones_background.setOpaque(true);
 
         javax.swing.GroupLayout jP_relaciones_forBackgroundLayout = new javax.swing.GroupLayout(jP_relaciones_forBackground);
         jP_relaciones_forBackground.setLayout(jP_relaciones_forBackgroundLayout);
         jP_relaciones_forBackgroundLayout.setHorizontalGroup(
             jP_relaciones_forBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 505, Short.MAX_VALUE)
+            .addComponent(jl_relaciones_background, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 505, Short.MAX_VALUE)
         );
         jP_relaciones_forBackgroundLayout.setVerticalGroup(
             jP_relaciones_forBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
+            .addComponent(jl_relaciones_background, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jLayeredPane4Layout = new javax.swing.GroupLayout(jLayeredPane4);
@@ -554,15 +563,99 @@ public class P4_Main extends javax.swing.JFrame {
             .addComponent(jLayeredPane4)
         );
 
+        jP_historial_foreground.setOpaque(false);
+
+        jl_historial_titulo.setText("jLabel1");
+
+        jLabel10.setText("Entrada Mas Reciente:");
+
+        jTA_historial_ultimaEntrada.setEditable(false);
+        jTA_historial_ultimaEntrada.setColumns(20);
+        jTA_historial_ultimaEntrada.setRows(5);
+        jScrollPane3.setViewportView(jTA_historial_ultimaEntrada);
+
+        jl_b_historial_eliminarEntrada.setText("jLabel14");
+        jl_b_historial_eliminarEntrada.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_b_historial_eliminarEntradaMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jP_historial_foregroundLayout = new javax.swing.GroupLayout(jP_historial_foreground);
+        jP_historial_foreground.setLayout(jP_historial_foregroundLayout);
+        jP_historial_foregroundLayout.setHorizontalGroup(
+            jP_historial_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jP_historial_foregroundLayout.createSequentialGroup()
+                .addGroup(jP_historial_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jP_historial_foregroundLayout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jP_historial_foregroundLayout.createSequentialGroup()
+                        .addGap(141, 141, 141)
+                        .addComponent(jl_b_historial_eliminarEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jP_historial_foregroundLayout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addGroup(jP_historial_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jl_historial_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10))))
+                .addContainerGap(44, Short.MAX_VALUE))
+        );
+        jP_historial_foregroundLayout.setVerticalGroup(
+            jP_historial_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jP_historial_foregroundLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jl_historial_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jl_b_historial_eliminarEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(65, Short.MAX_VALUE))
+        );
+
+        jl_historial_background.setBackground(new java.awt.Color(204, 255, 204));
+        jl_historial_background.setOpaque(true);
+
+        javax.swing.GroupLayout jP_historial_forBackgroundLayout = new javax.swing.GroupLayout(jP_historial_forBackground);
+        jP_historial_forBackground.setLayout(jP_historial_forBackgroundLayout);
+        jP_historial_forBackgroundLayout.setHorizontalGroup(
+            jP_historial_forBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jl_historial_background, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)
+        );
+        jP_historial_forBackgroundLayout.setVerticalGroup(
+            jP_historial_forBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jl_historial_background, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        javax.swing.GroupLayout jLayeredPane5Layout = new javax.swing.GroupLayout(jLayeredPane5);
+        jLayeredPane5.setLayout(jLayeredPane5Layout);
+        jLayeredPane5Layout.setHorizontalGroup(
+            jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jP_historial_forBackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jP_historial_foreground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jLayeredPane5Layout.setVerticalGroup(
+            jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane5Layout.createSequentialGroup()
+                .addComponent(jP_historial_forBackground, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jP_historial_foreground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jLayeredPane5.setLayer(jP_historial_foreground, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane5.setLayer(jP_historial_forBackground, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout jD_historialLayout = new javax.swing.GroupLayout(jD_historial.getContentPane());
         jD_historial.getContentPane().setLayout(jD_historialLayout);
         jD_historialLayout.setHorizontalGroup(
             jD_historialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jLayeredPane5)
         );
         jD_historialLayout.setVerticalGroup(
             jD_historialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jLayeredPane5)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -717,6 +810,7 @@ public class P4_Main extends javax.swing.JFrame {
         modificando = false;
         jl_relaciones_titulo.setIcon(new ImageIcon("./Resources/Interface/logo_relacion.png"));
         jl_b_relaciones_guardarCambios.setIcon(new ImageIcon("./Resources/Interface/button_guardarCambios.png"));
+        jCB_relaciones_actor1.setEnabled(true);
         jCB_relaciones_actor1.setSelectedIndex(0);
         jCB_relaciones_actor2.setSelectedIndex(0);
         jCB_relaciones_relacion.setSelectedIndex(0);
@@ -724,9 +818,13 @@ public class P4_Main extends javax.swing.JFrame {
         jD_relaciones.pack();
         jD_relaciones.setVisible(true);
     }//GEN-LAST:event_jl_b_addRelacionMouseClicked
-
-    private void jl_b_verHistorialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_verHistorialMouseClicked
         
+    private void jl_b_verHistorialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_verHistorialMouseClicked
+        jl_historial_titulo.setIcon(new ImageIcon("./Resources/Interface/logo_historial.png"));
+        jl_b_historial_eliminarEntrada.setIcon(new ImageIcon("./Resources/Interface/button_eliminarEntrada.png"));
+        jD_historial.setTitle("VER HISTORIAL");
+        jD_historial.pack();
+        jD_historial.setVisible(true);
     }//GEN-LAST:event_jl_b_verHistorialMouseClicked
 
     private void jl_b_baconNumberMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_baconNumberMouseClicked
@@ -735,6 +833,15 @@ public class P4_Main extends javax.swing.JFrame {
 
     private void jl_b_actor_agregarRelacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_actor_agregarRelacionMouseClicked
         modificando = false;
+        jl_relaciones_titulo.setIcon(new ImageIcon("./Resources/Interface/logo_relacion.png"));
+        jl_b_relaciones_guardarCambios.setIcon(new ImageIcon("./Resources/Interface/button_guardarCambios.png"));
+        jCB_relaciones_actor1.setSelectedIndex(0);
+        jCB_relaciones_actor1.setEnabled(false);
+        jCB_relaciones_actor2.setSelectedIndex(0);
+        jCB_relaciones_relacion.setSelectedIndex(0);
+        jD_relaciones.setTitle("AGREGAR NUEVA RELACION");
+        jD_relaciones.pack();
+        jD_relaciones.setVisible(true);
     }//GEN-LAST:event_jl_b_actor_agregarRelacionMouseClicked
 
     private void jl_b_actor_agregarPeliculaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_actor_agregarPeliculaMouseClicked
@@ -776,6 +883,11 @@ public class P4_Main extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_jl_b_relaciones_guardarCambiosMouseClicked
+
+    private void jl_b_historial_eliminarEntradaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_historial_eliminarEntradaMouseClicked
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(jD_actor,"entrada eliminada exitosamente!");
+    }//GEN-LAST:event_jl_b_historial_eliminarEntradaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -821,7 +933,7 @@ public class P4_Main extends javax.swing.JFrame {
     private javax.swing.JDialog jD_historial;
     private javax.swing.JDialog jD_pelicula;
     private javax.swing.JDialog jD_relaciones;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -837,8 +949,11 @@ public class P4_Main extends javax.swing.JFrame {
     private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JLayeredPane jLayeredPane3;
     private javax.swing.JLayeredPane jLayeredPane4;
+    private javax.swing.JLayeredPane jLayeredPane5;
     private javax.swing.JPanel jP_actor_forBackground;
     private javax.swing.JPanel jP_actor_foreground;
+    private javax.swing.JPanel jP_historial_forBackground;
+    private javax.swing.JPanel jP_historial_foreground;
     private javax.swing.JPanel jP_main_forBackground;
     private javax.swing.JPanel jP_main_foreground;
     private javax.swing.JPanel jP_pelicula_forbackground;
@@ -849,6 +964,8 @@ public class P4_Main extends javax.swing.JFrame {
     private javax.swing.JSpinner jS_pelicula_anio;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTextArea jTA_historial_ultimaEntrada;
     private javax.swing.JTextField jTF_actor_nombre;
     private javax.swing.JTextField jTF_pelicula_estudio;
     private javax.swing.JTextField jTF_pelicula_nombre;
@@ -862,12 +979,16 @@ public class P4_Main extends javax.swing.JFrame {
     private javax.swing.JLabel jl_b_addActor;
     private javax.swing.JLabel jl_b_addRelacion;
     private javax.swing.JLabel jl_b_baconNumber;
+    private javax.swing.JLabel jl_b_historial_eliminarEntrada;
     private javax.swing.JLabel jl_b_pelicula_guardarCambios;
     private javax.swing.JLabel jl_b_relaciones_guardarCambios;
     private javax.swing.JLabel jl_b_verHistorial;
     private javax.swing.JLabel jl_background;
+    private javax.swing.JLabel jl_historial_background;
+    private javax.swing.JLabel jl_historial_titulo;
     private javax.swing.JLabel jl_pelicula_background;
     private javax.swing.JLabel jl_pelicula_titulo;
+    private javax.swing.JLabel jl_relaciones_background;
     private javax.swing.JLabel jl_relaciones_titulo;
     private javax.swing.JLabel jl_titulo;
     // End of variables declaration//GEN-END:variables
