@@ -5,6 +5,10 @@
  */
 package p4.hollywooduniverse;
 
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author adrivega
@@ -16,6 +20,13 @@ public class P4_Main extends javax.swing.JFrame {
      */
     public P4_Main() {
         initComponents();
+        jl_titulo.setIcon(new ImageIcon("./Resources/Interface/logo_titulo.png"));
+        jl_b_addActor.setIcon(new ImageIcon("./Resources/Interface/button_addActor.png"));
+        jl_b_addRelacion.setIcon(new ImageIcon("./Resources/Interface/button_addRelacion.png"));
+        jl_b_verHistorial.setIcon(new ImageIcon("./Resources/Interface/button_verHistorial.png"));
+        jl_b_baconNumber.setIcon(new ImageIcon("./Resources/Interface/button_baconNumber.png"));
+        jl_background.setIcon(new ImageIcon("./Resources/Interface/background.png"));
+        modificando = false;
     }
 
     /**
@@ -27,21 +38,856 @@ public class P4_Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jD_actor = new javax.swing.JDialog();
+        jLayeredPane2 = new javax.swing.JLayeredPane();
+        jP_actor_foreground = new javax.swing.JPanel();
+        jl_actor_titulo = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jTF_actor_nombre = new javax.swing.JTextField();
+        jS_actor_edad = new javax.swing.JSpinner();
+        jCB_actor_nacionalidad = new javax.swing.JComboBox();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jT_actor_relaciones = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jT_actor_peliculas = new javax.swing.JTable();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jl_b_actor_agregarRelacion = new javax.swing.JLabel();
+        jl_b_actor_agregarPelicula = new javax.swing.JLabel();
+        jl_b_actor_guardarCambios = new javax.swing.JLabel();
+        jP_actor_forBackground = new javax.swing.JPanel();
+        jl_actor_background = new javax.swing.JLabel();
+        jD_pelicula = new javax.swing.JDialog();
+        jLayeredPane3 = new javax.swing.JLayeredPane();
+        jP_pelicula_foreground = new javax.swing.JPanel();
+        jl_pelicula_titulo = new javax.swing.JLabel();
+        jTF_pelicula_nombre = new javax.swing.JTextField();
+        jTF_pelicula_estudio = new javax.swing.JTextField();
+        jS_pelicula_anio = new javax.swing.JSpinner();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jl_b_pelicula_guardarCambios = new javax.swing.JLabel();
+        jP_pelicula_forbackground = new javax.swing.JPanel();
+        jl_pelicula_background = new javax.swing.JLabel();
+        jD_relaciones = new javax.swing.JDialog();
+        jLayeredPane4 = new javax.swing.JLayeredPane();
+        jP_relaciones_foreground = new javax.swing.JPanel();
+        jl_relaciones_titulo = new javax.swing.JLabel();
+        jCB_relaciones_actor1 = new javax.swing.JComboBox();
+        jCB_relaciones_actor2 = new javax.swing.JComboBox();
+        jCB_relaciones_relacion = new javax.swing.JComboBox();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jl_b_relaciones_guardarCambios = new javax.swing.JLabel();
+        jP_relaciones_forBackground = new javax.swing.JPanel();
+        jl_relaciones_background = new javax.swing.JLabel();
+        jD_historial = new javax.swing.JDialog();
+        jLayeredPane5 = new javax.swing.JLayeredPane();
+        jP_historial_foreground = new javax.swing.JPanel();
+        jl_historial_titulo = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTA_historial_ultimaEntrada = new javax.swing.JTextArea();
+        jl_b_historial_eliminarEntrada = new javax.swing.JLabel();
+        jP_historial_forBackground = new javax.swing.JPanel();
+        jl_historial_background = new javax.swing.JLabel();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
+        jP_main_foreground = new javax.swing.JPanel();
+        jl_titulo = new javax.swing.JLabel();
+        jl_b_baconNumber = new javax.swing.JLabel();
+        jl_b_verHistorial = new javax.swing.JLabel();
+        jl_b_addRelacion = new javax.swing.JLabel();
+        jl_b_addActor = new javax.swing.JLabel();
+        jP_main_forBackground = new javax.swing.JPanel();
+        jl_background = new javax.swing.JLabel();
+
+        jLayeredPane2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jP_actor_foreground.setOpaque(false);
+
+        jl_actor_titulo.setText("jLabel2");
+
+        jLabel3.setText("Nombre:");
+
+        jS_actor_edad.setModel(new javax.swing.SpinnerNumberModel(0, 0, 100, 1));
+
+        jCB_actor_nacionalidad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "--", "Afganistan", "Africa del Sur", "Albania", "Alemania", "Andorra", "Angola", "Antigua y Barbuda", "Antillas Holandesas", "Arabia Saudita", "Argelia", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarusia", "Belgica", "Belice", "Benin", "Bermudas", "Bolivia", "Bosnia", "Botswana", "Brasil", "Brunei Darussulam", "Bulgaria", "Burkina Faso", "Burundi", "Butan", "Camboya", "Camerun", "Canada", "Cape Verde", "Chad", "Chile", "China", "Chipre", "Colombia", "Comoros", "Congo", "Corea del Norte", "Corea del Sur", "Costa de Marfíl", "Costa Rica", "Croasia", "Cuba", "Dinamarca", "Djibouti", "Dominica", "Ecuador", "Egipto", "El Salvador", "Emiratos Arabes Unidos", "Eritrea", "Eslovenia", "España", "Estados Unidos", "Estonia", "Etiopia", "Fiji", "Filipinas", "Finlandia", "Francia", "Gabon", "Gambia", "Georgia", "Ghana", "Granada", "Grecia", "Groenlandia", "Guadalupe", "Guam", "Guatemala", "Guayana Francesa", "Guerney", "Guinea", "Guinea-Bissau", "Guinea Equatorial", "Guyana", "Haiti", "Holanda", "Honduras", "Hong Kong", "Hungria", "India", "Indonesia", "Irak", "Iran", "Irlanda", "Islandia", "Islas Caiman", "Islas Faroe", "Islas Malvinas", "Islas Marshall", "Islas Solomon", "Islas Virgenes Britanicas", "Islas Virgenes (U.S.)", "Israel", "Italia", "Jamaica", "Japon", "Jersey", "Jordania", "Kazakhstan", "Kenia", "Kiribati", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lesotho", "Libano", "Liberia", "Libia", "Liechtenstein", "Lituania", "Luxemburgo", "Macao", "Macedonia", "Madagascar", "Malasia", "Malawi", "Maldivas", "Mali", "Malta", "Marruecos", "Martinica", "Mauricio", "Mauritania", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Mozambique", "Myanmar (Burma)", "Namibia", "Nepal", "Nicaragua", "Niger", "Nigeria", "Noruega", "Nueva Caledonia", "Nueva Zealandia", "Oman", "Pakistan", "Palestina", "Panama", "Papua Nueva Guinea", "Paraguay", "Peru", "Polinesia Francesa", "Polonia", "Portugal", "Puerto Rico", "Qatar", "Reino Unido", "Republica Centroafricana", "Republica Checa", "Republica Democratica del Congo", "Republica Dominicana", "Republica Eslovaca", "Reunion", "Ruanda", "Rumania", "Rusia", "Sahara", "Samoa", "San Cristobal-Nevis (St. Kitts)", "San Marino", "San Vincente y las Granadinas", "Santa Helena", "Santa Lucia", "Santa Sede (Vaticano)", "Sao Tome & Principe", "Senegal", "Seychelles", "Sierra Leona", "Singapur", "Siria", "Somalia", "Sri Lanka (Ceilan)", "Sudan", "Sudan del Sur", "Suecia", "Suiza", "Sur Africa", "Surinam", "Swaziland", "Tailandia", "Taiwan", "Tajikistan", "Tanzania", "Timor Oriental", "Togo", "Tokelau", "Tonga", "Trinidad & Tobago", "Tunisia", "Turkmenistan", "Turquia", "Ucrania", "Uganda", "Union Europea", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe " }));
+        jCB_actor_nacionalidad.setToolTipText("");
+
+        jLabel4.setText("Nacionalidad");
+
+        jLabel5.setText("Edad");
+
+        jT_actor_relaciones.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Actor", "Relacion"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jT_actor_relaciones);
+        if (jT_actor_relaciones.getColumnModel().getColumnCount() > 0) {
+            jT_actor_relaciones.getColumnModel().getColumn(0).setResizable(false);
+            jT_actor_relaciones.getColumnModel().getColumn(1).setResizable(false);
+        }
+
+        jT_actor_peliculas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Titulo", "Estudio", "Año"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jT_actor_peliculas);
+        if (jT_actor_peliculas.getColumnModel().getColumnCount() > 0) {
+            jT_actor_peliculas.getColumnModel().getColumn(0).setResizable(false);
+            jT_actor_peliculas.getColumnModel().getColumn(1).setResizable(false);
+            jT_actor_peliculas.getColumnModel().getColumn(2).setResizable(false);
+            jT_actor_peliculas.getColumnModel().getColumn(2).setPreferredWidth(15);
+        }
+
+        jLabel6.setText("Relaciones:");
+
+        jLabel7.setText("Peliculas:");
+
+        jl_b_actor_agregarRelacion.setText("jLabel8");
+        jl_b_actor_agregarRelacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_b_actor_agregarRelacionMouseClicked(evt);
+            }
+        });
+
+        jl_b_actor_agregarPelicula.setText("jLabel8");
+        jl_b_actor_agregarPelicula.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_b_actor_agregarPeliculaMouseClicked(evt);
+            }
+        });
+
+        jl_b_actor_guardarCambios.setText("jLabel8");
+        jl_b_actor_guardarCambios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_b_actor_guardarCambiosMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jP_actor_foregroundLayout = new javax.swing.GroupLayout(jP_actor_foreground);
+        jP_actor_foreground.setLayout(jP_actor_foregroundLayout);
+        jP_actor_foregroundLayout.setHorizontalGroup(
+            jP_actor_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jP_actor_foregroundLayout.createSequentialGroup()
+                .addGroup(jP_actor_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jP_actor_foregroundLayout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addGroup(jP_actor_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jP_actor_foregroundLayout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(37, 37, 37)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jP_actor_foregroundLayout.createSequentialGroup()
+                                .addGroup(jP_actor_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jP_actor_foregroundLayout.createSequentialGroup()
+                                        .addGroup(jP_actor_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jP_actor_foregroundLayout.createSequentialGroup()
+                                                .addGap(20, 20, 20)
+                                                .addComponent(jLabel6))
+                                            .addGroup(jP_actor_foregroundLayout.createSequentialGroup()
+                                                .addGap(23, 23, 23)
+                                                .addComponent(jLabel3)))
+                                        .addGap(285, 285, 285))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_actor_foregroundLayout.createSequentialGroup()
+                                        .addComponent(jTF_actor_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)))
+                                .addGroup(jP_actor_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jP_actor_foregroundLayout.createSequentialGroup()
+                                        .addGap(21, 21, 21)
+                                        .addComponent(jLabel4)
+                                        .addGap(174, 174, 174)
+                                        .addComponent(jLabel5))
+                                    .addGroup(jP_actor_foregroundLayout.createSequentialGroup()
+                                        .addComponent(jCB_actor_nacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jS_actor_edad, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel7)))))
+                    .addGroup(jP_actor_foregroundLayout.createSequentialGroup()
+                        .addGap(265, 265, 265)
+                        .addComponent(jl_actor_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jP_actor_foregroundLayout.createSequentialGroup()
+                        .addGap(204, 204, 204)
+                        .addComponent(jl_b_actor_guardarCambios, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(50, Short.MAX_VALUE))
+            .addGroup(jP_actor_foregroundLayout.createSequentialGroup()
+                .addGap(79, 79, 79)
+                .addComponent(jl_b_actor_agregarRelacion, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jl_b_actor_agregarPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(112, 112, 112))
+        );
+        jP_actor_foregroundLayout.setVerticalGroup(
+            jP_actor_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jP_actor_foregroundLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jl_actor_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jP_actor_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jP_actor_foregroundLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTF_actor_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jP_actor_foregroundLayout.createSequentialGroup()
+                        .addGroup(jP_actor_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jP_actor_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jS_actor_edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jCB_actor_nacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(18, 18, 18)
+                .addGroup(jP_actor_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jP_actor_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jP_actor_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_b_actor_agregarRelacion, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jl_b_actor_agregarPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                .addComponent(jl_b_actor_guardarCambios, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jl_actor_background.setBackground(new java.awt.Color(255, 204, 153));
+        jl_actor_background.setOpaque(true);
+
+        javax.swing.GroupLayout jP_actor_forBackgroundLayout = new javax.swing.GroupLayout(jP_actor_forBackground);
+        jP_actor_forBackground.setLayout(jP_actor_forBackgroundLayout);
+        jP_actor_forBackgroundLayout.setHorizontalGroup(
+            jP_actor_forBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jl_actor_background, javax.swing.GroupLayout.DEFAULT_SIZE, 855, Short.MAX_VALUE)
+        );
+        jP_actor_forBackgroundLayout.setVerticalGroup(
+            jP_actor_forBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jl_actor_background, javax.swing.GroupLayout.DEFAULT_SIZE, 691, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jLayeredPane2Layout = new javax.swing.GroupLayout(jLayeredPane2);
+        jLayeredPane2.setLayout(jLayeredPane2Layout);
+        jLayeredPane2Layout.setHorizontalGroup(
+            jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jP_actor_forBackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jP_actor_foreground, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jLayeredPane2Layout.setVerticalGroup(
+            jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jP_actor_forBackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jP_actor_foreground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jLayeredPane2.setLayer(jP_actor_foreground, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jP_actor_forBackground, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jD_actorLayout = new javax.swing.GroupLayout(jD_actor.getContentPane());
+        jD_actor.getContentPane().setLayout(jD_actorLayout);
+        jD_actorLayout.setHorizontalGroup(
+            jD_actorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLayeredPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        jD_actorLayout.setVerticalGroup(
+            jD_actorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLayeredPane2)
+        );
+
+        jLayeredPane3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jP_pelicula_foreground.setOpaque(false);
+
+        jl_pelicula_titulo.setText("jLabel1");
+
+        jS_pelicula_anio.setModel(new javax.swing.SpinnerNumberModel(2000, 1900, 2020, 1));
+
+        jLabel2.setText("Titulo:");
+
+        jLabel8.setText("Estudio:");
+
+        jLabel9.setText("Año:");
+
+        jl_b_pelicula_guardarCambios.setText("jLabel10");
+        jl_b_pelicula_guardarCambios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_b_pelicula_guardarCambiosMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jP_pelicula_foregroundLayout = new javax.swing.GroupLayout(jP_pelicula_foreground);
+        jP_pelicula_foreground.setLayout(jP_pelicula_foregroundLayout);
+        jP_pelicula_foregroundLayout.setHorizontalGroup(
+            jP_pelicula_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jP_pelicula_foregroundLayout.createSequentialGroup()
+                .addGroup(jP_pelicula_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jP_pelicula_foregroundLayout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addGroup(jP_pelicula_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel9))
+                        .addGap(18, 18, 18)
+                        .addGroup(jP_pelicula_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTF_pelicula_estudio, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTF_pelicula_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jS_pelicula_anio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jP_pelicula_foregroundLayout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(jl_b_pelicula_guardarCambios, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(64, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_pelicula_foregroundLayout.createSequentialGroup()
+                .addGap(0, 64, Short.MAX_VALUE)
+                .addComponent(jl_pelicula_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56))
+        );
+        jP_pelicula_foregroundLayout.setVerticalGroup(
+            jP_pelicula_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jP_pelicula_foregroundLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jl_pelicula_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addGroup(jP_pelicula_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTF_pelicula_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jP_pelicula_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTF_pelicula_estudio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jP_pelicula_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jS_pelicula_anio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9))
+                .addGap(47, 47, 47)
+                .addComponent(jl_b_pelicula_guardarCambios, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jl_pelicula_background.setBackground(new java.awt.Color(255, 204, 204));
+        jl_pelicula_background.setOpaque(true);
+
+        javax.swing.GroupLayout jP_pelicula_forbackgroundLayout = new javax.swing.GroupLayout(jP_pelicula_forbackground);
+        jP_pelicula_forbackground.setLayout(jP_pelicula_forbackgroundLayout);
+        jP_pelicula_forbackgroundLayout.setHorizontalGroup(
+            jP_pelicula_forbackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jl_pelicula_background, javax.swing.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
+        );
+        jP_pelicula_forbackgroundLayout.setVerticalGroup(
+            jP_pelicula_forbackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jl_pelicula_background, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jLayeredPane3Layout = new javax.swing.GroupLayout(jLayeredPane3);
+        jLayeredPane3.setLayout(jLayeredPane3Layout);
+        jLayeredPane3Layout.setHorizontalGroup(
+            jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jP_pelicula_forbackground, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane3Layout.createSequentialGroup()
+                    .addComponent(jP_pelicula_foreground, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jLayeredPane3Layout.setVerticalGroup(
+            jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jP_pelicula_forbackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jP_pelicula_foreground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jLayeredPane3.setLayer(jP_pelicula_foreground, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane3.setLayer(jP_pelicula_forbackground, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jD_peliculaLayout = new javax.swing.GroupLayout(jD_pelicula.getContentPane());
+        jD_pelicula.getContentPane().setLayout(jD_peliculaLayout);
+        jD_peliculaLayout.setHorizontalGroup(
+            jD_peliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLayeredPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        jD_peliculaLayout.setVerticalGroup(
+            jD_peliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLayeredPane3)
+        );
+
+        jP_relaciones_foreground.setOpaque(false);
+
+        jl_relaciones_titulo.setText("jLabel10");
+
+        jCB_relaciones_actor1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jCB_relaciones_actor2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jCB_relaciones_relacion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "--", "Amistad", "Familia", "Noviazgo", "Matrimonio", "Divorcio" }));
+
+        jLabel11.setText("Actor:");
+
+        jLabel12.setText("Actor:");
+
+        jLabel13.setText("Relacion:");
+
+        jl_b_relaciones_guardarCambios.setText("jLabel14");
+        jl_b_relaciones_guardarCambios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_b_relaciones_guardarCambiosMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jP_relaciones_foregroundLayout = new javax.swing.GroupLayout(jP_relaciones_foreground);
+        jP_relaciones_foreground.setLayout(jP_relaciones_foregroundLayout);
+        jP_relaciones_foregroundLayout.setHorizontalGroup(
+            jP_relaciones_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_relaciones_foregroundLayout.createSequentialGroup()
+                .addContainerGap(39, Short.MAX_VALUE)
+                .addGroup(jP_relaciones_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jl_relaciones_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jP_relaciones_foregroundLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(jP_relaciones_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jP_relaciones_foregroundLayout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addGap(18, 18, 18)
+                                .addComponent(jCB_relaciones_relacion, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jP_relaciones_foregroundLayout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addGap(18, 18, 18)
+                                .addComponent(jCB_relaciones_actor1, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jP_relaciones_foregroundLayout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addGap(18, 18, 18)
+                                .addComponent(jCB_relaciones_actor2, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(37, 37, 37))
+            .addGroup(jP_relaciones_foregroundLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(jl_b_relaciones_guardarCambios, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(56, Short.MAX_VALUE))
+        );
+        jP_relaciones_foregroundLayout.setVerticalGroup(
+            jP_relaciones_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jP_relaciones_foregroundLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jl_relaciones_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addGroup(jP_relaciones_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCB_relaciones_actor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jP_relaciones_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCB_relaciones_actor2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jP_relaciones_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCB_relaciones_relacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                .addComponent(jl_b_relaciones_guardarCambios, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jl_relaciones_background.setBackground(new java.awt.Color(204, 204, 255));
+        jl_relaciones_background.setOpaque(true);
+
+        javax.swing.GroupLayout jP_relaciones_forBackgroundLayout = new javax.swing.GroupLayout(jP_relaciones_forBackground);
+        jP_relaciones_forBackground.setLayout(jP_relaciones_forBackgroundLayout);
+        jP_relaciones_forBackgroundLayout.setHorizontalGroup(
+            jP_relaciones_forBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jl_relaciones_background, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 505, Short.MAX_VALUE)
+        );
+        jP_relaciones_forBackgroundLayout.setVerticalGroup(
+            jP_relaciones_forBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jl_relaciones_background, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jLayeredPane4Layout = new javax.swing.GroupLayout(jLayeredPane4);
+        jLayeredPane4.setLayout(jLayeredPane4Layout);
+        jLayeredPane4Layout.setHorizontalGroup(
+            jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jP_relaciones_forBackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jP_relaciones_foreground, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jLayeredPane4Layout.setVerticalGroup(
+            jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jP_relaciones_forBackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jP_relaciones_foreground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jLayeredPane4.setLayer(jP_relaciones_foreground, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane4.setLayer(jP_relaciones_forBackground, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jD_relacionesLayout = new javax.swing.GroupLayout(jD_relaciones.getContentPane());
+        jD_relaciones.getContentPane().setLayout(jD_relacionesLayout);
+        jD_relacionesLayout.setHorizontalGroup(
+            jD_relacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLayeredPane4)
+        );
+        jD_relacionesLayout.setVerticalGroup(
+            jD_relacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLayeredPane4)
+        );
+
+        jP_historial_foreground.setOpaque(false);
+
+        jl_historial_titulo.setText("jLabel1");
+
+        jLabel10.setText("Entrada Mas Reciente:");
+
+        jTA_historial_ultimaEntrada.setEditable(false);
+        jTA_historial_ultimaEntrada.setColumns(20);
+        jTA_historial_ultimaEntrada.setRows(5);
+        jScrollPane3.setViewportView(jTA_historial_ultimaEntrada);
+
+        jl_b_historial_eliminarEntrada.setText("jLabel14");
+        jl_b_historial_eliminarEntrada.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_b_historial_eliminarEntradaMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jP_historial_foregroundLayout = new javax.swing.GroupLayout(jP_historial_foreground);
+        jP_historial_foreground.setLayout(jP_historial_foregroundLayout);
+        jP_historial_foregroundLayout.setHorizontalGroup(
+            jP_historial_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jP_historial_foregroundLayout.createSequentialGroup()
+                .addGroup(jP_historial_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jP_historial_foregroundLayout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jP_historial_foregroundLayout.createSequentialGroup()
+                        .addGap(141, 141, 141)
+                        .addComponent(jl_b_historial_eliminarEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jP_historial_foregroundLayout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addGroup(jP_historial_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jl_historial_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10))))
+                .addContainerGap(44, Short.MAX_VALUE))
+        );
+        jP_historial_foregroundLayout.setVerticalGroup(
+            jP_historial_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jP_historial_foregroundLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jl_historial_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jl_b_historial_eliminarEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(65, Short.MAX_VALUE))
+        );
+
+        jl_historial_background.setBackground(new java.awt.Color(204, 255, 204));
+        jl_historial_background.setOpaque(true);
+
+        javax.swing.GroupLayout jP_historial_forBackgroundLayout = new javax.swing.GroupLayout(jP_historial_forBackground);
+        jP_historial_forBackground.setLayout(jP_historial_forBackgroundLayout);
+        jP_historial_forBackgroundLayout.setHorizontalGroup(
+            jP_historial_forBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jl_historial_background, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)
+        );
+        jP_historial_forBackgroundLayout.setVerticalGroup(
+            jP_historial_forBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jl_historial_background, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        javax.swing.GroupLayout jLayeredPane5Layout = new javax.swing.GroupLayout(jLayeredPane5);
+        jLayeredPane5.setLayout(jLayeredPane5Layout);
+        jLayeredPane5Layout.setHorizontalGroup(
+            jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jP_historial_forBackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jP_historial_foreground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jLayeredPane5Layout.setVerticalGroup(
+            jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane5Layout.createSequentialGroup()
+                .addComponent(jP_historial_forBackground, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jP_historial_foreground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jLayeredPane5.setLayer(jP_historial_foreground, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane5.setLayer(jP_historial_forBackground, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jD_historialLayout = new javax.swing.GroupLayout(jD_historial.getContentPane());
+        jD_historial.getContentPane().setLayout(jD_historialLayout);
+        jD_historialLayout.setHorizontalGroup(
+            jD_historialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLayeredPane5)
+        );
+        jD_historialLayout.setVerticalGroup(
+            jD_historialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLayeredPane5)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("HOLLYWOOD UNIVERSE - Por:Adriana Vega & Oscar Carranza");
+        setBackground(new java.awt.Color(255, 153, 51));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setForeground(new java.awt.Color(255, 153, 51));
+        setIconImage((new ImageIcon("./Resources./Interface/background.png").getImage()));
+        setSize(1061,717);
+
+        jP_main_foreground.setOpaque(false);
+
+        jl_b_baconNumber.setText("jLabel4");
+        jl_b_baconNumber.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_b_baconNumberMouseClicked(evt);
+            }
+        });
+
+        jl_b_verHistorial.setText("jLabel3");
+        jl_b_verHistorial.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_b_verHistorialMouseClicked(evt);
+            }
+        });
+
+        jl_b_addRelacion.setText("jLabel2");
+        jl_b_addRelacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_b_addRelacionMouseClicked(evt);
+            }
+        });
+
+        jl_b_addActor.setText("jLabel1");
+        jl_b_addActor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_b_addActorMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jP_main_foregroundLayout = new javax.swing.GroupLayout(jP_main_foreground);
+        jP_main_foreground.setLayout(jP_main_foregroundLayout);
+        jP_main_foregroundLayout.setHorizontalGroup(
+            jP_main_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jP_main_foregroundLayout.createSequentialGroup()
+                .addGroup(jP_main_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jP_main_foregroundLayout.createSequentialGroup()
+                        .addGap(195, 195, 195)
+                        .addComponent(jl_b_addActor, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jl_b_addRelacion, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jl_b_verHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jl_b_baconNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jP_main_foregroundLayout.createSequentialGroup()
+                        .addGap(150, 150, 150)
+                        .addComponent(jl_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(161, Short.MAX_VALUE))
+        );
+        jP_main_foregroundLayout.setVerticalGroup(
+            jP_main_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jP_main_foregroundLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jl_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 493, Short.MAX_VALUE)
+                .addGroup(jP_main_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jl_b_addActor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jl_b_addRelacion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jl_b_baconNumber, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jl_b_verHistorial, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        jP_main_forBackground.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jl_background.setBackground(new java.awt.Color(206, 252, 252));
+        jl_background.setOpaque(true);
+
+        javax.swing.GroupLayout jP_main_forBackgroundLayout = new javax.swing.GroupLayout(jP_main_forBackground);
+        jP_main_forBackground.setLayout(jP_main_forBackgroundLayout);
+        jP_main_forBackgroundLayout.setHorizontalGroup(
+            jP_main_forBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jl_background, javax.swing.GroupLayout.DEFAULT_SIZE, 1057, Short.MAX_VALUE)
+        );
+        jP_main_forBackgroundLayout.setVerticalGroup(
+            jP_main_forBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jl_background, javax.swing.GroupLayout.DEFAULT_SIZE, 713, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
+        jLayeredPane1.setLayout(jLayeredPane1Layout);
+        jLayeredPane1Layout.setHorizontalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jP_main_forBackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                    .addComponent(jP_main_foreground, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jLayeredPane1Layout.setVerticalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                .addComponent(jP_main_forBackground, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                    .addComponent(jP_main_foreground, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 36, Short.MAX_VALUE)))
+        );
+        jLayeredPane1.setLayer(jP_main_foreground, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jP_main_forBackground, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jLayeredPane1)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jl_b_addActorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_addActorMouseClicked
+        modificando = false;
+        jl_actor_titulo.setIcon(new ImageIcon("./Resources/Interface/logo_actor.png"));
+        jl_b_actor_agregarRelacion.setIcon(new ImageIcon("./Resources/Interface/button_agregarRelacion.png"));
+        jl_b_actor_agregarPelicula.setIcon(new ImageIcon("./Resources/Interface/button_agregarPelicula.png"));
+        jl_b_actor_guardarCambios.setIcon(new ImageIcon("./Resources/Interface/button_guardarCambios.png"));
+        jTF_actor_nombre.setText("");
+        jCB_actor_nacionalidad.setSelectedIndex(0);
+        jS_actor_edad.setValue(0);
+        DefaultTableModel modelo = (DefaultTableModel)jT_actor_relaciones.getModel();
+        while(modelo.getRowCount() >0){
+            modelo.removeRow(0);
+        }
+        jT_actor_relaciones.setModel(modelo);
+        modelo = (DefaultTableModel)jT_actor_peliculas.getModel();
+        while(modelo.getRowCount() >0){
+            modelo.removeRow(0);
+        }
+        jT_actor_peliculas.setModel(modelo);
+        jD_actor.setTitle("AGREGAR NUEVO ACTOR");
+        jD_actor.pack();
+        jD_actor.setVisible(true);
+    }//GEN-LAST:event_jl_b_addActorMouseClicked
+
+    private void jl_b_addRelacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_addRelacionMouseClicked
+        modificando = false;
+        jl_relaciones_titulo.setIcon(new ImageIcon("./Resources/Interface/logo_relacion.png"));
+        jl_b_relaciones_guardarCambios.setIcon(new ImageIcon("./Resources/Interface/button_guardarCambios.png"));
+        jCB_relaciones_actor1.setEnabled(true);
+        jCB_relaciones_actor1.setSelectedIndex(0);
+        jCB_relaciones_actor2.setSelectedIndex(0);
+        jCB_relaciones_relacion.setSelectedIndex(0);
+        jD_relaciones.setTitle("AGREGAR NUEVA RELACION");
+        jD_relaciones.pack();
+        jD_relaciones.setVisible(true);
+    }//GEN-LAST:event_jl_b_addRelacionMouseClicked
+        
+    private void jl_b_verHistorialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_verHistorialMouseClicked
+        jl_historial_titulo.setIcon(new ImageIcon("./Resources/Interface/logo_historial.png"));
+        jl_b_historial_eliminarEntrada.setIcon(new ImageIcon("./Resources/Interface/button_eliminarEntrada.png"));
+        jD_historial.setTitle("VER HISTORIAL");
+        jD_historial.pack();
+        jD_historial.setVisible(true);
+    }//GEN-LAST:event_jl_b_verHistorialMouseClicked
+
+    private void jl_b_baconNumberMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_baconNumberMouseClicked
+        
+    }//GEN-LAST:event_jl_b_baconNumberMouseClicked
+
+    private void jl_b_actor_agregarRelacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_actor_agregarRelacionMouseClicked
+        modificando = false;
+        jl_relaciones_titulo.setIcon(new ImageIcon("./Resources/Interface/logo_relacion.png"));
+        jl_b_relaciones_guardarCambios.setIcon(new ImageIcon("./Resources/Interface/button_guardarCambios.png"));
+        jCB_relaciones_actor1.setSelectedIndex(0);
+        jCB_relaciones_actor1.setEnabled(false);
+        jCB_relaciones_actor2.setSelectedIndex(0);
+        jCB_relaciones_relacion.setSelectedIndex(0);
+        jD_relaciones.setTitle("AGREGAR NUEVA RELACION");
+        jD_relaciones.pack();
+        jD_relaciones.setVisible(true);
+    }//GEN-LAST:event_jl_b_actor_agregarRelacionMouseClicked
+
+    private void jl_b_actor_agregarPeliculaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_actor_agregarPeliculaMouseClicked
+        modificando = false;
+        jl_pelicula_titulo.setIcon(new ImageIcon("./Resources/Interface/logo_pelicula.png"));
+        jl_b_pelicula_guardarCambios.setIcon(new ImageIcon("./Resources/Interface/button_guardarCambios.png"));
+        jTF_pelicula_nombre.setText("");
+        jTF_pelicula_estudio.setText("");
+        jS_pelicula_anio.setValue(2000);
+        jD_pelicula.setTitle("AGREGAR NUEVA PELICULA");
+        jD_pelicula.pack();
+        jD_pelicula.setVisible(true);
+    }//GEN-LAST:event_jl_b_actor_agregarPeliculaMouseClicked
+
+    private void jl_b_actor_guardarCambiosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_actor_guardarCambiosMouseClicked
+        if(!modificando){ // agregar
+            JOptionPane.showMessageDialog(jD_actor,"actor agregado exitosamente!");
+            jD_actor.setVisible(false);
+        }else{ // modificar
+            
+        }
+    }//GEN-LAST:event_jl_b_actor_guardarCambiosMouseClicked
+
+    private void jl_b_pelicula_guardarCambiosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_pelicula_guardarCambiosMouseClicked
+        // TODO add your handling code here:
+        if(!modificando){ // agregar
+            JOptionPane.showMessageDialog(jD_actor,"pelicula agregada exitosamente!");
+            jD_pelicula.setVisible(false);
+        }else{ // modificar
+            
+        }
+    }//GEN-LAST:event_jl_b_pelicula_guardarCambiosMouseClicked
+
+    private void jl_b_relaciones_guardarCambiosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_relaciones_guardarCambiosMouseClicked
+        if(!modificando){ // agregar
+            JOptionPane.showMessageDialog(jD_actor,"relacion agregada exitosamente!");
+            jD_relaciones.setVisible(false);
+        }else{ //modificar
+            
+        }
+    }//GEN-LAST:event_jl_b_relaciones_guardarCambiosMouseClicked
+
+    private void jl_b_historial_eliminarEntradaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_historial_eliminarEntradaMouseClicked
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(jD_actor,"entrada eliminada exitosamente!");
+    }//GEN-LAST:event_jl_b_historial_eliminarEntradaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -79,5 +925,73 @@ public class P4_Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox jCB_actor_nacionalidad;
+    private javax.swing.JComboBox jCB_relaciones_actor1;
+    private javax.swing.JComboBox jCB_relaciones_actor2;
+    private javax.swing.JComboBox jCB_relaciones_relacion;
+    private javax.swing.JDialog jD_actor;
+    private javax.swing.JDialog jD_historial;
+    private javax.swing.JDialog jD_pelicula;
+    private javax.swing.JDialog jD_relaciones;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JLayeredPane jLayeredPane2;
+    private javax.swing.JLayeredPane jLayeredPane3;
+    private javax.swing.JLayeredPane jLayeredPane4;
+    private javax.swing.JLayeredPane jLayeredPane5;
+    private javax.swing.JPanel jP_actor_forBackground;
+    private javax.swing.JPanel jP_actor_foreground;
+    private javax.swing.JPanel jP_historial_forBackground;
+    private javax.swing.JPanel jP_historial_foreground;
+    private javax.swing.JPanel jP_main_forBackground;
+    private javax.swing.JPanel jP_main_foreground;
+    private javax.swing.JPanel jP_pelicula_forbackground;
+    private javax.swing.JPanel jP_pelicula_foreground;
+    private javax.swing.JPanel jP_relaciones_forBackground;
+    private javax.swing.JPanel jP_relaciones_foreground;
+    private javax.swing.JSpinner jS_actor_edad;
+    private javax.swing.JSpinner jS_pelicula_anio;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTextArea jTA_historial_ultimaEntrada;
+    private javax.swing.JTextField jTF_actor_nombre;
+    private javax.swing.JTextField jTF_pelicula_estudio;
+    private javax.swing.JTextField jTF_pelicula_nombre;
+    private javax.swing.JTable jT_actor_peliculas;
+    private javax.swing.JTable jT_actor_relaciones;
+    private javax.swing.JLabel jl_actor_background;
+    private javax.swing.JLabel jl_actor_titulo;
+    private javax.swing.JLabel jl_b_actor_agregarPelicula;
+    private javax.swing.JLabel jl_b_actor_agregarRelacion;
+    private javax.swing.JLabel jl_b_actor_guardarCambios;
+    private javax.swing.JLabel jl_b_addActor;
+    private javax.swing.JLabel jl_b_addRelacion;
+    private javax.swing.JLabel jl_b_baconNumber;
+    private javax.swing.JLabel jl_b_historial_eliminarEntrada;
+    private javax.swing.JLabel jl_b_pelicula_guardarCambios;
+    private javax.swing.JLabel jl_b_relaciones_guardarCambios;
+    private javax.swing.JLabel jl_b_verHistorial;
+    private javax.swing.JLabel jl_background;
+    private javax.swing.JLabel jl_historial_background;
+    private javax.swing.JLabel jl_historial_titulo;
+    private javax.swing.JLabel jl_pelicula_background;
+    private javax.swing.JLabel jl_pelicula_titulo;
+    private javax.swing.JLabel jl_relaciones_background;
+    private javax.swing.JLabel jl_relaciones_titulo;
+    private javax.swing.JLabel jl_titulo;
     // End of variables declaration//GEN-END:variables
+    boolean modificando;
+
 }
