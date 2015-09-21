@@ -6,6 +6,8 @@
 package p4.hollywooduniverse;
 
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -67,7 +69,7 @@ public class P4_Main extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jl_pelicula_guardarCambios = new javax.swing.JLabel();
+        jl_b_pelicula_guardarCambios = new javax.swing.JLabel();
         jP_pelicula_forbackground = new javax.swing.JPanel();
         jl_pelicula_background = new javax.swing.JLabel();
         jD_relaciones = new javax.swing.JDialog();
@@ -327,10 +329,10 @@ public class P4_Main extends javax.swing.JFrame {
 
         jLabel9.setText("Año:");
 
-        jl_pelicula_guardarCambios.setText("jLabel10");
-        jl_pelicula_guardarCambios.addMouseListener(new java.awt.event.MouseAdapter() {
+        jl_b_pelicula_guardarCambios.setText("jLabel10");
+        jl_b_pelicula_guardarCambios.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jl_pelicula_guardarCambiosMouseClicked(evt);
+                jl_b_pelicula_guardarCambiosMouseClicked(evt);
             }
         });
 
@@ -352,19 +354,20 @@ public class P4_Main extends javax.swing.JFrame {
                             .addComponent(jTF_pelicula_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jS_pelicula_anio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jP_pelicula_foregroundLayout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addComponent(jl_pelicula_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jP_pelicula_foregroundLayout.createSequentialGroup()
                         .addGap(45, 45, 45)
-                        .addComponent(jl_pelicula_guardarCambios, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jl_b_pelicula_guardarCambios, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(64, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_pelicula_foregroundLayout.createSequentialGroup()
+                .addGap(0, 64, Short.MAX_VALUE)
+                .addComponent(jl_pelicula_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56))
         );
         jP_pelicula_foregroundLayout.setVerticalGroup(
             jP_pelicula_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jP_pelicula_foregroundLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jl_pelicula_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addComponent(jl_pelicula_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(jP_pelicula_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTF_pelicula_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
@@ -376,8 +379,8 @@ public class P4_Main extends javax.swing.JFrame {
                 .addGroup(jP_pelicula_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jS_pelicula_anio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                .addComponent(jl_pelicula_guardarCambios, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(47, 47, 47)
+                .addComponent(jl_b_pelicula_guardarCambios, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jl_pelicula_background.setBackground(new java.awt.Color(255, 204, 204));
@@ -391,7 +394,7 @@ public class P4_Main extends javax.swing.JFrame {
         );
         jP_pelicula_forbackgroundLayout.setVerticalGroup(
             jP_pelicula_forbackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jl_pelicula_background, javax.swing.GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE)
+            .addComponent(jl_pelicula_background, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jLayeredPane3Layout = new javax.swing.GroupLayout(jLayeredPane3);
@@ -576,6 +579,20 @@ public class P4_Main extends javax.swing.JFrame {
         jl_b_actor_agregarRelacion.setIcon(new ImageIcon("./Resources/Interface/button_agregarRelacion.png"));
         jl_b_actor_agregarPelicula.setIcon(new ImageIcon("./Resources/Interface/button_agregarPelicula.png"));
         jl_b_actor_guardarCambios.setIcon(new ImageIcon("./Resources/Interface/button_guardarCambios.png"));
+        jTF_actor_nombre.setText("");
+        jCB_actor_nacionalidad.setSelectedIndex(0);
+        jS_actor_edad.setValue(0);
+        DefaultTableModel modelo = (DefaultTableModel)jT_actor_relaciones.getModel();
+        while(modelo.getRowCount() >0){
+            modelo.removeRow(0);
+        }
+        jT_actor_relaciones.setModel(modelo);
+        modelo = (DefaultTableModel)jT_actor_peliculas.getModel();
+        while(modelo.getRowCount() >0){
+            modelo.removeRow(0);
+        }
+        jT_actor_peliculas.setModel(modelo);
+        jD_actor.setTitle("AGREGAR NUEVO ACTOR");
         jD_actor.pack();
         jD_actor.setVisible(true);
     }//GEN-LAST:event_jl_b_addActorMouseClicked
@@ -599,24 +616,33 @@ public class P4_Main extends javax.swing.JFrame {
     private void jl_b_actor_agregarPeliculaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_actor_agregarPeliculaMouseClicked
         modificando = false;
         jl_pelicula_titulo.setIcon(new ImageIcon("./Resources/Interface/logo_pelicula.png"));
+        jl_b_pelicula_guardarCambios.setIcon(new ImageIcon("./Resources/Interface/button_guardarCambios.png"));
+        jTF_pelicula_nombre.setText("");
+        jTF_pelicula_estudio.setText("");
+        jS_pelicula_anio.setValue(2000);
+        jD_pelicula.setTitle("AGREGAR NUEVA PELICULA");
+        jD_pelicula.pack();
+        jD_pelicula.setVisible(true);
     }//GEN-LAST:event_jl_b_actor_agregarPeliculaMouseClicked
 
     private void jl_b_actor_guardarCambiosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_actor_guardarCambiosMouseClicked
         if(!modificando){ // agregar
-            
+            JOptionPane.showMessageDialog(jD_actor,"actor agregado exitosamente!");
+            jD_actor.setVisible(false);
         }else{ // modificar
             
         }
     }//GEN-LAST:event_jl_b_actor_guardarCambiosMouseClicked
 
-    private void jl_pelicula_guardarCambiosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_pelicula_guardarCambiosMouseClicked
+    private void jl_b_pelicula_guardarCambiosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_pelicula_guardarCambiosMouseClicked
         // TODO add your handling code here:
         if(!modificando){ // agregar
-            
+            JOptionPane.showMessageDialog(jD_actor,"pelicula agregada exitosamente!");
+            jD_pelicula.setVisible(false);
         }else{ // modificar
             
         }
-    }//GEN-LAST:event_jl_pelicula_guardarCambiosMouseClicked
+    }//GEN-LAST:event_jl_b_pelicula_guardarCambiosMouseClicked
 
     /**
      * @param args the command line arguments
@@ -693,10 +719,10 @@ public class P4_Main extends javax.swing.JFrame {
     private javax.swing.JLabel jl_b_addActor;
     private javax.swing.JLabel jl_b_addRelacion;
     private javax.swing.JLabel jl_b_baconNumber;
+    private javax.swing.JLabel jl_b_pelicula_guardarCambios;
     private javax.swing.JLabel jl_b_verHistorial;
     private javax.swing.JLabel jl_background;
     private javax.swing.JLabel jl_pelicula_background;
-    private javax.swing.JLabel jl_pelicula_guardarCambios;
     private javax.swing.JLabel jl_pelicula_titulo;
     private javax.swing.JLabel jl_titulo;
     // End of variables declaration//GEN-END:variables
