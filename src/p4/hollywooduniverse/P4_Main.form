@@ -7,15 +7,743 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
+              <Component id="jLayeredPane2" min="-2" max="-2" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
+              <Component id="jLayeredPane2" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JLayeredPane" name="jLayeredPane2">
+          <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                <EtchetBorder/>
+              </Border>
+            </Property>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jP_actor_forBackground" alignment="0" max="32767" attributes="0"/>
+                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                      <Component id="jP_actor_foreground" alignment="1" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jP_actor_forBackground" alignment="0" max="32767" attributes="0"/>
+                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                      <Component id="jP_actor_foreground" alignment="0" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JPanel" name="jP_actor_foreground">
+              <Properties>
+                <Property name="opaque" type="boolean" value="false"/>
+              </Properties>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jScrollPane1" min="-2" pref="318" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                                          <Component id="jScrollPane2" min="-2" pref="407" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                                                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                                  <EmptySpace min="-2" pref="285" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="1" attributes="0">
+                                                  <Component id="jTF_actor_nombre" min="-2" pref="347" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace min="21" pref="21" max="-2" attributes="0"/>
+                                                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="174" max="-2" attributes="0"/>
+                                                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jCB_actor_nacionalidad" min="-2" pref="256" max="-2" attributes="0"/>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Component id="jS_actor_edad" min="-2" pref="101" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="265" max="-2" attributes="0"/>
+                                  <Component id="jl_actor_titulo" min="-2" pref="312" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="204" max="-2" attributes="0"/>
+                                  <Component id="jl_b_actor_guardarCambios" min="-2" pref="400" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace pref="50" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
+                          <Component id="jl_b_actor_agregarRelacion" min="-2" pref="250" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jl_b_actor_agregarPelicula" min="-2" pref="249" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jl_actor_titulo" min="-2" pref="148" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jTF_actor_nombre" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jS_actor_edad" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jCB_actor_nacionalidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jScrollPane1" pref="223" max="32767" attributes="0"/>
+                              <Component id="jScrollPane2" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jl_b_actor_agregarRelacion" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                              <Component id="jl_b_actor_agregarPelicula" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="89" max="32767" attributes="0"/>
+                          <Component id="jl_b_actor_guardarCambios" min="-2" pref="71" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="jl_actor_titulo">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="jLabel2"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel3">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Nombre:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="jTF_actor_nombre">
+                </Component>
+                <Component class="javax.swing.JSpinner" name="jS_actor_edad">
+                  <Properties>
+                    <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+                      <SpinnerModel initial="0" maximum="100" minimum="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="jCB_actor_nacionalidad">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="218">
+                        <StringItem index="0" value="--"/>
+                        <StringItem index="1" value="Afganistan"/>
+                        <StringItem index="2" value="Africa del Sur"/>
+                        <StringItem index="3" value="Albania"/>
+                        <StringItem index="4" value="Alemania"/>
+                        <StringItem index="5" value="Andorra"/>
+                        <StringItem index="6" value="Angola"/>
+                        <StringItem index="7" value="Antigua y Barbuda"/>
+                        <StringItem index="8" value="Antillas Holandesas"/>
+                        <StringItem index="9" value="Arabia Saudita"/>
+                        <StringItem index="10" value="Argelia"/>
+                        <StringItem index="11" value="Argentina"/>
+                        <StringItem index="12" value="Armenia"/>
+                        <StringItem index="13" value="Aruba"/>
+                        <StringItem index="14" value="Australia"/>
+                        <StringItem index="15" value="Austria"/>
+                        <StringItem index="16" value="Azerbaijan"/>
+                        <StringItem index="17" value="Bahamas"/>
+                        <StringItem index="18" value="Bahrain"/>
+                        <StringItem index="19" value="Bangladesh"/>
+                        <StringItem index="20" value="Barbados"/>
+                        <StringItem index="21" value="Belarusia"/>
+                        <StringItem index="22" value="Belgica"/>
+                        <StringItem index="23" value="Belice"/>
+                        <StringItem index="24" value="Benin"/>
+                        <StringItem index="25" value="Bermudas"/>
+                        <StringItem index="26" value="Bolivia"/>
+                        <StringItem index="27" value="Bosnia"/>
+                        <StringItem index="28" value="Botswana"/>
+                        <StringItem index="29" value="Brasil"/>
+                        <StringItem index="30" value="Brunei Darussulam"/>
+                        <StringItem index="31" value="Bulgaria"/>
+                        <StringItem index="32" value="Burkina Faso"/>
+                        <StringItem index="33" value="Burundi"/>
+                        <StringItem index="34" value="Butan"/>
+                        <StringItem index="35" value="Camboya"/>
+                        <StringItem index="36" value="Camerun"/>
+                        <StringItem index="37" value="Canada"/>
+                        <StringItem index="38" value="Cape Verde"/>
+                        <StringItem index="39" value="Chad"/>
+                        <StringItem index="40" value="Chile"/>
+                        <StringItem index="41" value="China"/>
+                        <StringItem index="42" value="Chipre"/>
+                        <StringItem index="43" value="Colombia"/>
+                        <StringItem index="44" value="Comoros"/>
+                        <StringItem index="45" value="Congo"/>
+                        <StringItem index="46" value="Corea del Norte"/>
+                        <StringItem index="47" value="Corea del Sur"/>
+                        <StringItem index="48" value="Costa de Marf&#xed;l"/>
+                        <StringItem index="49" value="Costa Rica"/>
+                        <StringItem index="50" value="Croasia"/>
+                        <StringItem index="51" value="Cuba"/>
+                        <StringItem index="52" value="Dinamarca"/>
+                        <StringItem index="53" value="Djibouti"/>
+                        <StringItem index="54" value="Dominica"/>
+                        <StringItem index="55" value="Ecuador"/>
+                        <StringItem index="56" value="Egipto"/>
+                        <StringItem index="57" value="El Salvador"/>
+                        <StringItem index="58" value="Emiratos Arabes Unidos"/>
+                        <StringItem index="59" value="Eritrea"/>
+                        <StringItem index="60" value="Eslovenia"/>
+                        <StringItem index="61" value="Espa&#xf1;a"/>
+                        <StringItem index="62" value="Estados Unidos"/>
+                        <StringItem index="63" value="Estonia"/>
+                        <StringItem index="64" value="Etiopia"/>
+                        <StringItem index="65" value="Fiji"/>
+                        <StringItem index="66" value="Filipinas"/>
+                        <StringItem index="67" value="Finlandia"/>
+                        <StringItem index="68" value="Francia"/>
+                        <StringItem index="69" value="Gabon"/>
+                        <StringItem index="70" value="Gambia"/>
+                        <StringItem index="71" value="Georgia"/>
+                        <StringItem index="72" value="Ghana"/>
+                        <StringItem index="73" value="Granada"/>
+                        <StringItem index="74" value="Grecia"/>
+                        <StringItem index="75" value="Groenlandia"/>
+                        <StringItem index="76" value="Guadalupe"/>
+                        <StringItem index="77" value="Guam"/>
+                        <StringItem index="78" value="Guatemala"/>
+                        <StringItem index="79" value="Guayana Francesa"/>
+                        <StringItem index="80" value="Guerney"/>
+                        <StringItem index="81" value="Guinea"/>
+                        <StringItem index="82" value="Guinea-Bissau"/>
+                        <StringItem index="83" value="Guinea Equatorial"/>
+                        <StringItem index="84" value="Guyana"/>
+                        <StringItem index="85" value="Haiti"/>
+                        <StringItem index="86" value="Holanda"/>
+                        <StringItem index="87" value="Honduras"/>
+                        <StringItem index="88" value="Hong Kong"/>
+                        <StringItem index="89" value="Hungria"/>
+                        <StringItem index="90" value="India"/>
+                        <StringItem index="91" value="Indonesia"/>
+                        <StringItem index="92" value="Irak"/>
+                        <StringItem index="93" value="Iran"/>
+                        <StringItem index="94" value="Irlanda"/>
+                        <StringItem index="95" value="Islandia"/>
+                        <StringItem index="96" value="Islas Caiman"/>
+                        <StringItem index="97" value="Islas Faroe"/>
+                        <StringItem index="98" value="Islas Malvinas"/>
+                        <StringItem index="99" value="Islas Marshall"/>
+                        <StringItem index="100" value="Islas Solomon"/>
+                        <StringItem index="101" value="Islas Virgenes Britanicas"/>
+                        <StringItem index="102" value="Islas Virgenes (U.S.)"/>
+                        <StringItem index="103" value="Israel"/>
+                        <StringItem index="104" value="Italia"/>
+                        <StringItem index="105" value="Jamaica"/>
+                        <StringItem index="106" value="Japon"/>
+                        <StringItem index="107" value="Jersey"/>
+                        <StringItem index="108" value="Jordania"/>
+                        <StringItem index="109" value="Kazakhstan"/>
+                        <StringItem index="110" value="Kenia"/>
+                        <StringItem index="111" value="Kiribati"/>
+                        <StringItem index="112" value="Kuwait"/>
+                        <StringItem index="113" value="Kyrgyzstan"/>
+                        <StringItem index="114" value="Laos"/>
+                        <StringItem index="115" value="Latvia"/>
+                        <StringItem index="116" value="Lesotho"/>
+                        <StringItem index="117" value="Libano"/>
+                        <StringItem index="118" value="Liberia"/>
+                        <StringItem index="119" value="Libia"/>
+                        <StringItem index="120" value="Liechtenstein"/>
+                        <StringItem index="121" value="Lituania"/>
+                        <StringItem index="122" value="Luxemburgo"/>
+                        <StringItem index="123" value="Macao"/>
+                        <StringItem index="124" value="Macedonia"/>
+                        <StringItem index="125" value="Madagascar"/>
+                        <StringItem index="126" value="Malasia"/>
+                        <StringItem index="127" value="Malawi"/>
+                        <StringItem index="128" value="Maldivas"/>
+                        <StringItem index="129" value="Mali"/>
+                        <StringItem index="130" value="Malta"/>
+                        <StringItem index="131" value="Marruecos"/>
+                        <StringItem index="132" value="Martinica"/>
+                        <StringItem index="133" value="Mauricio"/>
+                        <StringItem index="134" value="Mauritania"/>
+                        <StringItem index="135" value="Mexico"/>
+                        <StringItem index="136" value="Micronesia"/>
+                        <StringItem index="137" value="Moldova"/>
+                        <StringItem index="138" value="Monaco"/>
+                        <StringItem index="139" value="Mongolia"/>
+                        <StringItem index="140" value="Mozambique"/>
+                        <StringItem index="141" value="Myanmar (Burma)"/>
+                        <StringItem index="142" value="Namibia"/>
+                        <StringItem index="143" value="Nepal"/>
+                        <StringItem index="144" value="Nicaragua"/>
+                        <StringItem index="145" value="Niger"/>
+                        <StringItem index="146" value="Nigeria"/>
+                        <StringItem index="147" value="Noruega"/>
+                        <StringItem index="148" value="Nueva Caledonia"/>
+                        <StringItem index="149" value="Nueva Zealandia"/>
+                        <StringItem index="150" value="Oman"/>
+                        <StringItem index="151" value="Pakistan"/>
+                        <StringItem index="152" value="Palestina"/>
+                        <StringItem index="153" value="Panama"/>
+                        <StringItem index="154" value="Papua Nueva Guinea"/>
+                        <StringItem index="155" value="Paraguay"/>
+                        <StringItem index="156" value="Peru"/>
+                        <StringItem index="157" value="Polinesia Francesa"/>
+                        <StringItem index="158" value="Polonia"/>
+                        <StringItem index="159" value="Portugal"/>
+                        <StringItem index="160" value="Puerto Rico"/>
+                        <StringItem index="161" value="Qatar"/>
+                        <StringItem index="162" value="Reino Unido"/>
+                        <StringItem index="163" value="Republica Centroafricana"/>
+                        <StringItem index="164" value="Republica Checa"/>
+                        <StringItem index="165" value="Republica Democratica del Congo"/>
+                        <StringItem index="166" value="Republica Dominicana"/>
+                        <StringItem index="167" value="Republica Eslovaca"/>
+                        <StringItem index="168" value="Reunion"/>
+                        <StringItem index="169" value="Ruanda"/>
+                        <StringItem index="170" value="Rumania"/>
+                        <StringItem index="171" value="Rusia"/>
+                        <StringItem index="172" value="Sahara"/>
+                        <StringItem index="173" value="Samoa"/>
+                        <StringItem index="174" value="San Cristobal-Nevis (St. Kitts)"/>
+                        <StringItem index="175" value="San Marino"/>
+                        <StringItem index="176" value="San Vincente y las Granadinas"/>
+                        <StringItem index="177" value="Santa Helena"/>
+                        <StringItem index="178" value="Santa Lucia"/>
+                        <StringItem index="179" value="Santa Sede (Vaticano)"/>
+                        <StringItem index="180" value="Sao Tome &amp; Principe"/>
+                        <StringItem index="181" value="Senegal"/>
+                        <StringItem index="182" value="Seychelles"/>
+                        <StringItem index="183" value="Sierra Leona"/>
+                        <StringItem index="184" value="Singapur"/>
+                        <StringItem index="185" value="Siria"/>
+                        <StringItem index="186" value="Somalia"/>
+                        <StringItem index="187" value="Sri Lanka (Ceilan)"/>
+                        <StringItem index="188" value="Sudan"/>
+                        <StringItem index="189" value="Sudan del Sur"/>
+                        <StringItem index="190" value="Suecia"/>
+                        <StringItem index="191" value="Suiza"/>
+                        <StringItem index="192" value="Sur Africa"/>
+                        <StringItem index="193" value="Surinam"/>
+                        <StringItem index="194" value="Swaziland"/>
+                        <StringItem index="195" value="Tailandia"/>
+                        <StringItem index="196" value="Taiwan"/>
+                        <StringItem index="197" value="Tajikistan"/>
+                        <StringItem index="198" value="Tanzania"/>
+                        <StringItem index="199" value="Timor Oriental"/>
+                        <StringItem index="200" value="Togo"/>
+                        <StringItem index="201" value="Tokelau"/>
+                        <StringItem index="202" value="Tonga"/>
+                        <StringItem index="203" value="Trinidad &amp; Tobago"/>
+                        <StringItem index="204" value="Tunisia"/>
+                        <StringItem index="205" value="Turkmenistan"/>
+                        <StringItem index="206" value="Turquia"/>
+                        <StringItem index="207" value="Ucrania"/>
+                        <StringItem index="208" value="Uganda"/>
+                        <StringItem index="209" value="Union Europea"/>
+                        <StringItem index="210" value="Uruguay"/>
+                        <StringItem index="211" value="Uzbekistan"/>
+                        <StringItem index="212" value="Vanuatu"/>
+                        <StringItem index="213" value="Venezuela"/>
+                        <StringItem index="214" value="Vietnam"/>
+                        <StringItem index="215" value="Yemen"/>
+                        <StringItem index="216" value="Zambia"/>
+                        <StringItem index="217" value="Zimbabwe "/>
+                      </StringArray>
+                    </Property>
+                    <Property name="toolTipText" type="java.lang.String" value=""/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel4">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Nacionalidad"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel5">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Edad"/>
+                  </Properties>
+                </Component>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JTable" name="jT_actor_relaciones">
+                      <Properties>
+                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                          <Table columnCount="2" rowCount="0">
+                            <Column editable="false" title="Actor" type="java.lang.Object"/>
+                            <Column editable="false" title="Relacion" type="java.lang.String"/>
+                          </Table>
+                        </Property>
+                        <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                          <TableColumnModel selectionModel="0">
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                          </TableColumnModel>
+                        </Property>
+                        <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                          <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                        </Property>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JTable" name="jT_actor_peliculas">
+                      <Properties>
+                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                          <Table columnCount="3" rowCount="0">
+                            <Column editable="false" title="Titulo" type="java.lang.String"/>
+                            <Column editable="false" title="Estudio" type="java.lang.String"/>
+                            <Column editable="false" title="A&#xf1;o" type="java.lang.Integer"/>
+                          </Table>
+                        </Property>
+                        <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                          <TableColumnModel selectionModel="0">
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="15" resizable="false">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                          </TableColumnModel>
+                        </Property>
+                        <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                          <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                        </Property>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Component class="javax.swing.JLabel" name="jLabel6">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Relaciones:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel7">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Peliculas:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jl_b_actor_agregarRelacion">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="jLabel8"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jl_b_actor_agregarRelacionMouseClicked"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jl_b_actor_agregarPelicula">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="jLabel8"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jl_b_actor_agregarPeliculaMouseClicked"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jl_b_actor_guardarCambios">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="jLabel8"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jl_b_actor_guardarCambiosMouseClicked"/>
+                  </Events>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jP_actor_forBackground">
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jl_actor_background" alignment="0" pref="855" max="32767" attributes="0"/>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jl_actor_background" pref="691" max="32767" attributes="0"/>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="jl_actor_background">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="99" green="cc" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="opaque" type="boolean" value="true"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JDialog" name="jD_pelicula">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="jLayeredPane3" min="-2" max="-2" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="jLayeredPane3" alignment="0" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JLayeredPane" name="jLayeredPane3">
+          <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                <EtchetBorder/>
+              </Border>
+            </Property>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jP_pelicula_forbackground" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jP_pelicula_foreground" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jP_pelicula_forbackground" max="32767" attributes="0"/>
+                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                      <Component id="jP_pelicula_foreground" alignment="0" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JPanel" name="jP_pelicula_foreground">
+              <Properties>
+                <Property name="opaque" type="boolean" value="false"/>
+              </Properties>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel8" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel9" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jTF_pelicula_estudio" min="-2" pref="330" max="-2" attributes="0"/>
+                                      <Component id="jTF_pelicula_nombre" min="-2" pref="330" max="-2" attributes="0"/>
+                                      <Component id="jS_pelicula_anio" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="jl_pelicula_titulo" min="-2" pref="102" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                                  <Component id="jl_pelicula_guardarCambios" min="-2" pref="400" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace pref="64" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jl_pelicula_titulo" min="-2" pref="66" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jTF_pelicula_nombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jTF_pelicula_estudio" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jS_pelicula_anio" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="47" max="32767" attributes="0"/>
+                          <Component id="jl_pelicula_guardarCambios" min="-2" pref="71" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="jl_pelicula_titulo">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="jLabel1"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="jTF_pelicula_nombre">
+                </Component>
+                <Component class="javax.swing.JTextField" name="jTF_pelicula_estudio">
+                </Component>
+                <Component class="javax.swing.JSpinner" name="jS_pelicula_anio">
+                  <Properties>
+                    <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+                      <SpinnerModel initial="2000" maximum="2020" minimum="1900" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Titulo:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel8">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Estudio:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel9">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="A&#xf1;o:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jl_pelicula_guardarCambios">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="jLabel10"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jl_pelicula_guardarCambiosMouseClicked"/>
+                  </Events>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jP_pelicula_forbackground">
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jl_pelicula_background" alignment="0" pref="509" max="32767" attributes="0"/>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jl_pelicula_background" alignment="0" pref="319" max="32767" attributes="0"/>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="jl_pelicula_background">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="cc" green="cc" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="opaque" type="boolean" value="true"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+      </SubComponents>
     </Container>
     <Container class="javax.swing.JDialog" name="jD_relaciones">
 
@@ -101,10 +829,10 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+              <Component id="jP_main_forBackground" alignment="0" max="32767" attributes="0"/>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="jP_main_foreground" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -113,12 +841,12 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jP_main_forBackground" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="jP_main_foreground" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="36" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -126,7 +854,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="jPanel2">
+        <Container class="javax.swing.JPanel" name="jP_main_foreground">
           <Properties>
             <Property name="opaque" type="boolean" value="false"/>
           </Properties>
@@ -208,7 +936,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="jPanel1">
+        <Container class="javax.swing.JPanel" name="jP_main_forBackground">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
