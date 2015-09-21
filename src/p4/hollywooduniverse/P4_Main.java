@@ -73,6 +73,18 @@ public class P4_Main extends javax.swing.JFrame {
         jP_pelicula_forbackground = new javax.swing.JPanel();
         jl_pelicula_background = new javax.swing.JLabel();
         jD_relaciones = new javax.swing.JDialog();
+        jLayeredPane4 = new javax.swing.JLayeredPane();
+        jP_relaciones_foreground = new javax.swing.JPanel();
+        jl_relaciones_titulo = new javax.swing.JLabel();
+        jCB_relaciones_actor1 = new javax.swing.JComboBox();
+        jCB_relaciones_actor2 = new javax.swing.JComboBox();
+        jCB_relaciones_relacion = new javax.swing.JComboBox();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jl_b_relaciones_guardarCambios = new javax.swing.JLabel();
+        jP_relaciones_forBackground = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jD_historial = new javax.swing.JDialog();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jP_main_foreground = new javax.swing.JPanel();
@@ -427,15 +439,119 @@ public class P4_Main extends javax.swing.JFrame {
             .addComponent(jLayeredPane3)
         );
 
+        jP_relaciones_foreground.setOpaque(false);
+
+        jl_relaciones_titulo.setText("jLabel10");
+
+        jCB_relaciones_actor1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jCB_relaciones_actor2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jCB_relaciones_relacion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "--", "Amistad", "Familia", "Noviazgo", "Matrimonio", "Divorcio" }));
+
+        jLabel11.setText("Actor 1:");
+
+        jLabel12.setText("Actor 2:");
+
+        jLabel13.setText("Relacion:");
+
+        jl_b_relaciones_guardarCambios.setText("jLabel14");
+        jl_b_relaciones_guardarCambios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_b_relaciones_guardarCambiosMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jP_relaciones_foregroundLayout = new javax.swing.GroupLayout(jP_relaciones_foreground);
+        jP_relaciones_foreground.setLayout(jP_relaciones_foregroundLayout);
+        jP_relaciones_foregroundLayout.setHorizontalGroup(
+            jP_relaciones_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_relaciones_foregroundLayout.createSequentialGroup()
+                .addContainerGap(39, Short.MAX_VALUE)
+                .addGroup(jP_relaciones_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jl_relaciones_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jP_relaciones_foregroundLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(jP_relaciones_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jP_relaciones_foregroundLayout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addGap(18, 18, 18)
+                                .addComponent(jCB_relaciones_relacion, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jP_relaciones_foregroundLayout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addGap(18, 18, 18)
+                                .addComponent(jCB_relaciones_actor1, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jP_relaciones_foregroundLayout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addGap(18, 18, 18)
+                                .addComponent(jCB_relaciones_actor2, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(37, 37, 37))
+            .addGroup(jP_relaciones_foregroundLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(jl_b_relaciones_guardarCambios, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(56, Short.MAX_VALUE))
+        );
+        jP_relaciones_foregroundLayout.setVerticalGroup(
+            jP_relaciones_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jP_relaciones_foregroundLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jl_relaciones_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addGroup(jP_relaciones_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCB_relaciones_actor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jP_relaciones_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCB_relaciones_actor2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jP_relaciones_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCB_relaciones_relacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                .addComponent(jl_b_relaciones_guardarCambios, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jLabel1.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel1.setOpaque(true);
+
+        javax.swing.GroupLayout jP_relaciones_forBackgroundLayout = new javax.swing.GroupLayout(jP_relaciones_forBackground);
+        jP_relaciones_forBackground.setLayout(jP_relaciones_forBackgroundLayout);
+        jP_relaciones_forBackgroundLayout.setHorizontalGroup(
+            jP_relaciones_forBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 505, Short.MAX_VALUE)
+        );
+        jP_relaciones_forBackgroundLayout.setVerticalGroup(
+            jP_relaciones_forBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jLayeredPane4Layout = new javax.swing.GroupLayout(jLayeredPane4);
+        jLayeredPane4.setLayout(jLayeredPane4Layout);
+        jLayeredPane4Layout.setHorizontalGroup(
+            jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jP_relaciones_forBackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jP_relaciones_foreground, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jLayeredPane4Layout.setVerticalGroup(
+            jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jP_relaciones_forBackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jP_relaciones_foreground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jLayeredPane4.setLayer(jP_relaciones_foreground, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane4.setLayer(jP_relaciones_forBackground, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout jD_relacionesLayout = new javax.swing.GroupLayout(jD_relaciones.getContentPane());
         jD_relaciones.getContentPane().setLayout(jD_relacionesLayout);
         jD_relacionesLayout.setHorizontalGroup(
             jD_relacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jLayeredPane4)
         );
         jD_relacionesLayout.setVerticalGroup(
             jD_relacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jLayeredPane4)
         );
 
         javax.swing.GroupLayout jD_historialLayout = new javax.swing.GroupLayout(jD_historial.getContentPane());
@@ -599,6 +715,14 @@ public class P4_Main extends javax.swing.JFrame {
 
     private void jl_b_addRelacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_addRelacionMouseClicked
         modificando = false;
+        jl_relaciones_titulo.setIcon(new ImageIcon("./Resources/Interface/logo_relacion.png"));
+        jl_b_relaciones_guardarCambios.setIcon(new ImageIcon("./Resources/Interface/button_guardarCambios.png"));
+        jCB_relaciones_actor1.setSelectedIndex(0);
+        jCB_relaciones_actor2.setSelectedIndex(0);
+        jCB_relaciones_relacion.setSelectedIndex(0);
+        jD_relaciones.setTitle("AGREGAR NUEVA RELACION");
+        jD_relaciones.pack();
+        jD_relaciones.setVisible(true);
     }//GEN-LAST:event_jl_b_addRelacionMouseClicked
 
     private void jl_b_verHistorialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_verHistorialMouseClicked
@@ -644,6 +768,15 @@ public class P4_Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jl_b_pelicula_guardarCambiosMouseClicked
 
+    private void jl_b_relaciones_guardarCambiosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_relaciones_guardarCambiosMouseClicked
+        if(!modificando){ // agregar
+            JOptionPane.showMessageDialog(jD_actor,"relacion agregada exitosamente!");
+            jD_relaciones.setVisible(false);
+        }else{ //modificar
+            
+        }
+    }//GEN-LAST:event_jl_b_relaciones_guardarCambiosMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -681,10 +814,17 @@ public class P4_Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox jCB_actor_nacionalidad;
+    private javax.swing.JComboBox jCB_relaciones_actor1;
+    private javax.swing.JComboBox jCB_relaciones_actor2;
+    private javax.swing.JComboBox jCB_relaciones_relacion;
     private javax.swing.JDialog jD_actor;
     private javax.swing.JDialog jD_historial;
     private javax.swing.JDialog jD_pelicula;
     private javax.swing.JDialog jD_relaciones;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -696,12 +836,15 @@ public class P4_Main extends javax.swing.JFrame {
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JLayeredPane jLayeredPane3;
+    private javax.swing.JLayeredPane jLayeredPane4;
     private javax.swing.JPanel jP_actor_forBackground;
     private javax.swing.JPanel jP_actor_foreground;
     private javax.swing.JPanel jP_main_forBackground;
     private javax.swing.JPanel jP_main_foreground;
     private javax.swing.JPanel jP_pelicula_forbackground;
     private javax.swing.JPanel jP_pelicula_foreground;
+    private javax.swing.JPanel jP_relaciones_forBackground;
+    private javax.swing.JPanel jP_relaciones_foreground;
     private javax.swing.JSpinner jS_actor_edad;
     private javax.swing.JSpinner jS_pelicula_anio;
     private javax.swing.JScrollPane jScrollPane1;
@@ -720,10 +863,12 @@ public class P4_Main extends javax.swing.JFrame {
     private javax.swing.JLabel jl_b_addRelacion;
     private javax.swing.JLabel jl_b_baconNumber;
     private javax.swing.JLabel jl_b_pelicula_guardarCambios;
+    private javax.swing.JLabel jl_b_relaciones_guardarCambios;
     private javax.swing.JLabel jl_b_verHistorial;
     private javax.swing.JLabel jl_background;
     private javax.swing.JLabel jl_pelicula_background;
     private javax.swing.JLabel jl_pelicula_titulo;
+    private javax.swing.JLabel jl_relaciones_titulo;
     private javax.swing.JLabel jl_titulo;
     // End of variables declaration//GEN-END:variables
     boolean modificando;
