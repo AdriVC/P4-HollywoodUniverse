@@ -1,13 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package p4.hollywooduniverse;
 
+import edu.uci.ics.jung.algorithms.layout.CircleLayout;
+import edu.uci.ics.jung.algorithms.layout.FRLayout;
+import edu.uci.ics.jung.algorithms.layout.Layout;
+import edu.uci.ics.jung.graph.Graph;
+import edu.uci.ics.jung.graph.SparseMultigraph;
+import edu.uci.ics.jung.visualization.BasicVisualizationServer;
+import edu.uci.ics.jung.visualization.GraphZoomScrollPane;
+import edu.uci.ics.jung.visualization.VisualizationViewer;
+import edu.uci.ics.jung.visualization.decorators.ToStringLabeller;
+import java.awt.Dimension;
+import java.awt.Shape;
+import java.awt.geom.AffineTransform;
+import java.awt.geom.Ellipse2D;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import org.apache.commons.collections15.Transformer;
+
 
 /**
  *
@@ -20,6 +33,7 @@ public class P4_Main extends javax.swing.JFrame {
      */
     public P4_Main() {
         initComponents();
+        
         jl_titulo.setIcon(new ImageIcon("./Resources/Interface/logo_titulo.png"));
         jl_b_addActor.setIcon(new ImageIcon("./Resources/Interface/button_addActor.png"));
         jl_b_addRelacion.setIcon(new ImageIcon("./Resources/Interface/button_addRelacion.png"));
@@ -102,6 +116,7 @@ public class P4_Main extends javax.swing.JFrame {
         jl_b_verHistorial = new javax.swing.JLabel();
         jl_b_addRelacion = new javax.swing.JLabel();
         jl_b_addActor = new javax.swing.JLabel();
+        panel = new javax.swing.JPanel();
         jP_main_forBackground = new javax.swing.JPanel();
         jl_background = new javax.swing.JLabel();
 
@@ -388,15 +403,15 @@ public class P4_Main extends javax.swing.JFrame {
             .addGroup(jP_pelicula_foregroundLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jl_pelicula_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addGroup(jP_pelicula_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTF_pelicula_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jP_pelicula_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTF_pelicula_estudio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jP_pelicula_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8)
+                    .addComponent(jTF_pelicula_estudio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jP_pelicula_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jS_pelicula_anio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
@@ -452,9 +467,11 @@ public class P4_Main extends javax.swing.JFrame {
 
         jl_relaciones_titulo.setText("jLabel10");
 
-        jCB_relaciones_actor1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jCB_relaciones_actor2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jCB_relaciones_actor1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCB_relaciones_actor1ActionPerformed(evt);
+            }
+        });
 
         jCB_relaciones_relacion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "--", "Amistad", "Familia", "Noviazgo", "Matrimonio", "Divorcio" }));
 
@@ -664,7 +681,6 @@ public class P4_Main extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setForeground(new java.awt.Color(255, 153, 51));
         setIconImage((new ImageIcon("./Resources./Interface/background.png").getImage()));
-        setSize(1061,717);
 
         jP_main_foreground.setOpaque(false);
 
@@ -696,6 +712,17 @@ public class P4_Main extends javax.swing.JFrame {
             }
         });
 
+        javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
+        panel.setLayout(panelLayout);
+        panelLayout.setHorizontalGroup(
+            panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 750, Short.MAX_VALUE)
+        );
+        panelLayout.setVerticalGroup(
+            panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 424, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout jP_main_foregroundLayout = new javax.swing.GroupLayout(jP_main_foreground);
         jP_main_foreground.setLayout(jP_main_foregroundLayout);
         jP_main_foregroundLayout.setHorizontalGroup(
@@ -713,7 +740,9 @@ public class P4_Main extends javax.swing.JFrame {
                         .addComponent(jl_b_baconNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jP_main_foregroundLayout.createSequentialGroup()
                         .addGap(150, 150, 150)
-                        .addComponent(jl_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jP_main_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jl_titulo, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
+                            .addComponent(panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(161, Short.MAX_VALUE))
         );
         jP_main_foregroundLayout.setVerticalGroup(
@@ -721,7 +750,9 @@ public class P4_Main extends javax.swing.JFrame {
             .addGroup(jP_main_foregroundLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jl_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 493, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addGroup(jP_main_foregroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jl_b_addActor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jl_b_addRelacion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -807,6 +838,16 @@ public class P4_Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jl_b_addActorMouseClicked
 
     private void jl_b_addRelacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_addRelacionMouseClicked
+        //Llenar comboboxes
+        jCB_relaciones_actor1.removeAllItems();
+        jCB_relaciones_actor2.removeAllItems();
+        
+        for(Actor actor:actores){
+            jCB_relaciones_actor1.addItem(actor);
+            jCB_relaciones_actor2.addItem(actor);
+        }
+                
+        //Frame
         modificando = false;
         jl_relaciones_titulo.setIcon(new ImageIcon("./Resources/Interface/logo_relacion.png"));
         jl_b_relaciones_guardarCambios.setIcon(new ImageIcon("./Resources/Interface/button_guardarCambios.png"));
@@ -835,10 +876,24 @@ public class P4_Main extends javax.swing.JFrame {
         modificando = false;
         jl_relaciones_titulo.setIcon(new ImageIcon("./Resources/Interface/logo_relacion.png"));
         jl_b_relaciones_guardarCambios.setIcon(new ImageIcon("./Resources/Interface/button_guardarCambios.png"));
+        jCB_relaciones_actor1.removeAllItems();
+        jCB_relaciones_actor1.addItem("...");
+        jCB_relaciones_actor2.removeAllItems();
+        jCB_relaciones_actor2.addItem("...");
+
+        
+        //Llenar cb
+        for (Actor actor : actores) {
+            jCB_relaciones_actor1.addItem(actor);
+            jCB_relaciones_actor2.addItem(actor);
+        }
+        
         jCB_relaciones_actor1.setSelectedIndex(0);
         jCB_relaciones_actor1.setEnabled(false);
         jCB_relaciones_actor2.setSelectedIndex(0);
         jCB_relaciones_relacion.setSelectedIndex(0);
+        
+        
         jD_relaciones.setTitle("AGREGAR NUEVA RELACION");
         jD_relaciones.pack();
         jD_relaciones.setVisible(true);
@@ -858,6 +913,9 @@ public class P4_Main extends javax.swing.JFrame {
 
     private void jl_b_actor_guardarCambiosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_actor_guardarCambiosMouseClicked
         if(!modificando){ // agregar
+            movies = new ArrayList();
+            actores.add(new Actor(jTF_actor_nombre.getText(),jCB_actor_nacionalidad.getSelectedItem().toString(),(int)jS_actor_edad.getValue(),movies));
+            g.addVertex(new Actor(jTF_actor_nombre.getText(),jCB_actor_nacionalidad.getSelectedItem().toString(),(int)jS_actor_edad.getValue(),movies));
             JOptionPane.showMessageDialog(jD_actor,"actor agregado exitosamente!");
             jD_actor.setVisible(false);
         }else{ // modificar
@@ -868,6 +926,14 @@ public class P4_Main extends javax.swing.JFrame {
     private void jl_b_pelicula_guardarCambiosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_pelicula_guardarCambiosMouseClicked
         // TODO add your handling code here:
         if(!modificando){ // agregar
+            Movie m = new Movie((int)jS_pelicula_anio.getValue(),jTF_pelicula_nombre.getText(),jTF_pelicula_estudio.getText());
+            movies.add(m);
+            
+            //update table
+            DefaultTableModel model = (DefaultTableModel)jT_actor_peliculas.getModel();         
+            model.addRow(new Object[]{m.getTitle(),m.getStudio(),m.getYear()});
+            jT_actor_peliculas.setModel(model);
+            
             JOptionPane.showMessageDialog(jD_actor,"pelicula agregada exitosamente!");
             jD_pelicula.setVisible(false);
         }else{ // modificar
@@ -877,8 +943,54 @@ public class P4_Main extends javax.swing.JFrame {
 
     private void jl_b_relaciones_guardarCambiosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_relaciones_guardarCambiosMouseClicked
         if(!modificando){ // agregar
-            JOptionPane.showMessageDialog(jD_actor,"relacion agregada exitosamente!");
-            jD_relaciones.setVisible(false);
+            //Relacion invalida
+            if(jCB_relaciones_actor1.getSelectedIndex() == jCB_relaciones_actor2.getSelectedIndex() || jCB_relaciones_relacion.getSelectedIndex() == 0){
+                JOptionPane.showMessageDialog(this, "No puede haber una relación NULA ó entre si mismo ");
+            }
+            else{
+                
+                String nombre = jCB_relaciones_relacion.getSelectedItem().toString();
+                nombre += "[" + jCB_relaciones_actor1.getSelectedItem().toString().charAt(0) + "," 
+                              + jCB_relaciones_actor2.getSelectedItem().toString().charAt(0) + "]";
+                
+                
+                Object[] acs = g.getVertices().toArray();
+                Actor selectedA1  = null;
+                Actor selectedA2 = null;
+                
+                for (int i = 0; i < acs.length; i++) {
+                    System.out.println(acs[i].toString());
+                }
+                
+                for(int i = 0; i < g.getVertexCount(); i++){
+                        if(acs[i].toString().equals(jCB_relaciones_actor1.getSelectedItem().toString())){
+                            selectedA1 = (Actor)acs[i];
+                        }
+                        if(acs[i].toString().equals(jCB_relaciones_actor2.getSelectedItem().toString())){
+                            selectedA2 = (Actor)acs[i];
+                        }
+                }
+                
+                g.addEdge(nombre,selectedA1, selectedA2);
+                
+                Layout <Actor, String> layout = new CircleLayout(g);
+                layout .setSize ( new Dimension (500 , 500) );
+                BasicVisualizationServer <Actor,String> vv = new BasicVisualizationServer(layout);
+                vv.getRenderContext().setVertexLabelTransformer(new ToStringLabeller());
+                vv.getRenderContext().setEdgeLabelTransformer(new ToStringLabeller());
+                vv.setPreferredSize ( new Dimension (500 , 500) );
+
+
+                // Sets the viewing area size
+                JFrame frame = new JFrame (" Simple Graph View ");
+                frame.getContentPane () . add ( vv );
+                frame.pack () ;
+                frame.setVisible ( true );
+                
+                JOptionPane.showMessageDialog(jD_actor,"relacion agregada exitosamente!");
+                jD_relaciones.setVisible(false);
+            }
+
         }else{ //modificar
             
         }
@@ -889,6 +1001,23 @@ public class P4_Main extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(jD_actor,"entrada eliminada exitosamente!");
     }//GEN-LAST:event_jl_b_historial_eliminarEntradaMouseClicked
 
+    private void jCB_relaciones_actor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCB_relaciones_actor1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCB_relaciones_actor1ActionPerformed
+
+    //Este metodo es para el layout del edge
+    public String identificadorRelaciones(String n){
+        String retorno = "";
+        if(n.startsWith("1"))
+            retorno = "Amistad";
+        else if(n.startsWith("2"))
+            retorno  = "Familia";
+        else if(n.startsWith("3"))
+            retorno = "Noviazgo";
+        else if(n.startsWith("4"))
+            retorno = "Matrimonio";
+        return retorno;
+    }
     /**
      * @param args the command line arguments
      */
@@ -991,7 +1120,11 @@ public class P4_Main extends javax.swing.JFrame {
     private javax.swing.JLabel jl_relaciones_background;
     private javax.swing.JLabel jl_relaciones_titulo;
     private javax.swing.JLabel jl_titulo;
+    private javax.swing.JPanel panel;
     // End of variables declaration//GEN-END:variables
     boolean modificando;
+    final Graph <Actor,String> g = new SparseMultigraph<Actor,String>();
+    ArrayList <Movie> movies = new ArrayList();
+    ArrayList <Actor> actores = new ArrayList();
 
 }

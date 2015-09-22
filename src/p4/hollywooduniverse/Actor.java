@@ -48,6 +48,11 @@ public class Actor {
     public void addMovie(Movie m){
         movies.add(m);
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
     
     
 }
