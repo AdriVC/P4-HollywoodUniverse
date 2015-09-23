@@ -54,5 +54,9 @@ public class Actor {
         return name;
     }
     
+    public Actor(){
+        
+    }
+    
     
 }
