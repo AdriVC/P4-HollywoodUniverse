@@ -14,8 +14,10 @@ import java.util.ArrayList;
 import java.util.Stack;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 import org.apache.commons.collections15.Factory;
 
@@ -31,7 +33,6 @@ public class P4_Main extends javax.swing.JFrame {
      */
     public P4_Main() {
         initComponents();
-        
         jl_titulo.setIcon(new ImageIcon("./Resources/Interface/logo_titulo.png"));
         jl_b_addActor.setIcon(new ImageIcon("./Resources/Interface/button_addActor.png"));
         jl_b_addRelacion.setIcon(new ImageIcon("./Resources/Interface/button_addRelacion.png"));
@@ -42,7 +43,6 @@ public class P4_Main extends javax.swing.JFrame {
         historial = new Stack();
         this.setLocationRelativeTo(null);
         modificando = false;
-        
     }
 
     /**
@@ -1085,10 +1085,15 @@ public class P4_Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jl_b_actor_agregarPeliculaMouseClicked
 
     private void jl_b_actor_guardarCambiosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_actor_guardarCambiosMouseClicked
+
         if(!modificando){ // agregar
-            movies = new ArrayList();
-            actores.add(new Actor(jTF_actor_nombre.getText(),jCB_actor_nacionalidad.getSelectedItem().toString(),(int)jS_actor_edad.getValue(),movies));
-            g.addVertex(new Actor(jTF_actor_nombre.getText(),jCB_actor_nacionalidad.getSelectedItem().toString(),(int)jS_actor_edad.getValue(),movies));
+            actores.add(new Actor(jTF_actor_nombre.getText(),jCB_actor_nacionalidad.getSelectedItem().toString(),(int)jS_actor_edad.getValue(),movies_actorActual));
+            g.addVertex(new Actor(jTF_actor_nombre.getText(),jCB_actor_nacionalidad.getSelectedItem().toString(),(int)jS_actor_edad.getValue(),movies_actorActual));
+            String paraHistorial = "Agregar actor " + jTF_actor_nombre.getText() + "(nacionalidad: " + jCB_actor_nacionalidad.getSelectedItem().toString() + ", Edad: " + jS_actor_edad.getValue() + ")\n\tPeliculas:";
+            for (int i = 0; i < movies_actorActual.size(); i++) {
+                paraHistorial += ("\n\t" + (i+1) + ": " + movies_actorActual.get(i).getTitle() + "[" + movies_actorActual.get(i).getStudio() + ", " + movies_actorActual.get(i).getYear() + "]");
+            }
+            historial.push(paraHistorial);
             JOptionPane.showMessageDialog(jD_actor,"actor agregado exitosamente!");
             jD_actor.setVisible(false);
         }else{ // modificar
@@ -1098,9 +1103,9 @@ public class P4_Main extends javax.swing.JFrame {
 
     private void jl_b_pelicula_guardarCambiosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_pelicula_guardarCambiosMouseClicked
         // TODO add your handling code here:
-        if(!modificando){ // agregar
+         if(!modificando){ // agregar
             Movie m = new Movie((int)jS_pelicula_anio.getValue(),jTF_pelicula_nombre.getText(),jTF_pelicula_estudio.getText());
-            movies.add(m);
+            movies_actorActual.add(m);
             
             //update table
             DefaultTableModel model = (DefaultTableModel)jT_actor_peliculas.getModel();         
@@ -1115,15 +1120,14 @@ public class P4_Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jl_b_pelicula_guardarCambiosMouseClicked
 
     private void jl_b_relaciones_guardarCambiosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_relaciones_guardarCambiosMouseClicked
-        if(!modificando){ // agregar
+      if(!modificando){ // agregar
             //Relacion invalida
            if(jCB_relaciones_actor1.getSelectedIndex() == jCB_relaciones_actor2.getSelectedIndex() ||  
                     jCB_relaciones_relacion.getSelectedIndex() == 0 || 
                     jCB_relaciones_actor1.getSelectedIndex() == 0 || 
                     jCB_relaciones_actor2.getSelectedIndex() == 0){
-                JOptionPane.showMessageDialog(this, "No puede haber una relación NULA ó entre si mismo ");
-            }
-            else{
+                JOptionPane.showMessageDialog(this, "No puede haber una relaciÃ³n NULA Ã³ entre si mismo ");
+            }else{
                 
                 String nombre = jCB_relaciones_relacion.getSelectedItem().toString();
                 nombre += "[" + jCB_relaciones_actor1.getSelectedItem().toString().charAt(0) + "," 
@@ -1146,7 +1150,7 @@ public class P4_Main extends javax.swing.JFrame {
                             selectedA2 = (Actor)acs[i];
                         }
                 }
-                
+                historial.push("Agregar relacion de " + nombre + " entre " + selectedA1.getName() + " y " + selectedA2.getName());
                 g.addEdge(nombre,selectedA1, selectedA2);
                 
                 JOptionPane.showMessageDialog(jD_actor,"relacion agregada exitosamente!");
@@ -1163,6 +1167,13 @@ public class P4_Main extends javax.swing.JFrame {
 
     private void jl_b_historial_eliminarEntradaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_historial_eliminarEntradaMouseClicked
         // TODO add your handling code here:
+         // TODO add your handling code here:
+        historial.pop();
+        if (historial.size()>0) {
+            jTA_historial_ultimaEntrada.setText((String)historial.peek());
+        }else{
+            jTA_historial_ultimaEntrada.setText("*Historial Vacio*");
+        }        
         JOptionPane.showMessageDialog(jD_actor,"entrada eliminada exitosamente!");
     }//GEN-LAST:event_jl_b_historial_eliminarEntradaMouseClicked
 
@@ -1175,9 +1186,13 @@ public class P4_Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jl_b_baconNumberMouseClicked
 
     private void jl_b_verHistorialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_verHistorialMouseClicked
-        jl_historial_titulo.setIcon(new ImageIcon("./Resources/Interface/logo_historial.png"));
+         jl_historial_titulo.setIcon(new ImageIcon("./Resources/Interface/logo_historial.png"));
         jl_b_historial_eliminarEntrada.setIcon(new ImageIcon("./Resources/Interface/button_eliminarEntrada.png"));
-        jTA_historial_ultimaEntrada.setText((String)historial.peek());
+        if(historial.size()>0){
+            jTA_historial_ultimaEntrada.setText((String)historial.peek());
+        }else{
+            jTA_historial_ultimaEntrada.setText("*Historial Vacio*");
+        }
         jD_historial.setTitle("VER HISTORIAL");
         jD_historial.setLocationRelativeTo(null);
         jD_historial.pack();
@@ -1186,26 +1201,33 @@ public class P4_Main extends javax.swing.JFrame {
 
     private void jl_b_addRelacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_addRelacionMouseClicked
         //Llenar comboboxes
-        jCB_relaciones_actor1.removeAllItems();
-        jCB_relaciones_actor2.removeAllItems();
+         //Llenar comboboxes
+        if (actores.size() > 1) {
+            jCB_relaciones_actor1.removeAllItems();
+            jCB_relaciones_actor2.removeAllItems();
 
-        for(Actor actor:actores){
-            jCB_relaciones_actor1.addItem(actor);
-            jCB_relaciones_actor2.addItem(actor);
+            jCB_relaciones_actor1.addItem("--");
+            jCB_relaciones_actor2.addItem("--");
+            for (Actor actor : actores) {
+                jCB_relaciones_actor1.addItem(actor);
+                jCB_relaciones_actor2.addItem(actor);
+            }
+
+            //Frame
+            modificando = false;
+            jl_relaciones_titulo.setIcon(new ImageIcon("./Resources/Interface/logo_relacion.png"));
+            jl_b_relaciones_guardarCambios.setIcon(new ImageIcon("./Resources/Interface/button_guardarCambios.png"));
+            jCB_relaciones_actor1.setEnabled(true);
+            jCB_relaciones_actor1.setSelectedIndex(0);
+            jCB_relaciones_actor2.setSelectedIndex(0);
+            jCB_relaciones_relacion.setSelectedIndex(0);
+            jD_relaciones.setTitle("AGREGAR NUEVA RELACION");
+            jD_relaciones.pack();
+            jD_relaciones.setLocationRelativeTo(null);
+            jD_relaciones.setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(this, "Necesita por lo menos 2 actores para crear una relacion");
         }
-
-        //Frame
-        modificando = false;
-        jl_relaciones_titulo.setIcon(new ImageIcon("./Resources/Interface/logo_relacion.png"));
-        jl_b_relaciones_guardarCambios.setIcon(new ImageIcon("./Resources/Interface/button_guardarCambios.png"));
-        jCB_relaciones_actor1.setEnabled(true);
-        jCB_relaciones_actor1.setSelectedIndex(0);
-        jCB_relaciones_actor2.setSelectedIndex(0);
-        jCB_relaciones_relacion.setSelectedIndex(0);
-        jD_relaciones.setTitle("AGREGAR NUEVA RELACION");
-        jD_relaciones.pack();
-        jD_relaciones.setLocationRelativeTo(null);
-        jD_relaciones.setVisible(true);
     }//GEN-LAST:event_jl_b_addRelacionMouseClicked
 
     private void jl_b_addActorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_addActorMouseClicked
@@ -1213,12 +1235,12 @@ public class P4_Main extends javax.swing.JFrame {
         if(evt.getButton() == MouseEvent.BUTTON1){
             modificando = false;
             jl_actor_titulo.setIcon(new ImageIcon("./Resources/Interface/logo_actor.png"));
-            jl_b_actor_agregarRelacion.setIcon(new ImageIcon("./Resources/Interface/button_agregarRelacion.png"));
             jl_b_actor_agregarPelicula.setIcon(new ImageIcon("./Resources/Interface/button_agregarPelicula.png"));
             jl_b_actor_guardarCambios.setIcon(new ImageIcon("./Resources/Interface/button_guardarCambios.png"));
             jTF_actor_nombre.setText("");
             jCB_actor_nacionalidad.setSelectedIndex(0);
             jS_actor_edad.setValue(0);
+            movies_actorActual = new ArrayList();
             DefaultTableModel modelo = (DefaultTableModel)jT_actor_relaciones.getModel();
             while(modelo.getRowCount() >0){
                 modelo.removeRow(0);
@@ -1229,6 +1251,7 @@ public class P4_Main extends javax.swing.JFrame {
                 modelo.removeRow(0);
             }
             jT_actor_peliculas.setModel(modelo);
+            jT_actor_relaciones.setEnabled(false);
             jD_actor.setTitle("AGREGAR NUEVO ACTOR");
             jD_actor.pack();
             jD_actor.setLocationRelativeTo(null);
@@ -1241,7 +1264,7 @@ public class P4_Main extends javax.swing.JFrame {
             jl_b_actor_guardarCambios1.setIcon(new ImageIcon("./Resources/Interface/button_guardarCambios.png"));
             jCB_actor_nacionalidad1 = jCB_actor_nacionalidad;
             cb_edit.removeAllItems();
-            cb_edit.addItem("...");
+            cb_edit.addItem("--");
             
             for(Actor actor:actores){
                 cb_edit.addItem(actor);
@@ -1255,37 +1278,40 @@ public class P4_Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jl_b_addActorMouseClicked
 
     private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
-       
-                vertexFactory = new Factory <Actor>() { 
-                    public Actor create() {
-                        return new Actor();
-                    }
-                };
-                edgeFactory = new Factory <String>() { 
-                    public String create() {
-                        return "E"+edgeCount++;
-                    }
-                };
-                
-                Layout <Actor, String> layout = new CircleLayout(g);
-                layout .setSize ( new Dimension (300 , 300) );
-                VisualizationViewer <Actor,String> vv = new VisualizationViewer<Actor,String>(layout);
-                vv.getRenderContext().setVertexLabelTransformer(new ToStringLabeller());
-                vv.getRenderContext().setEdgeLabelTransformer(new ToStringLabeller());
-                vv.setPreferredSize ( new Dimension (500 , 500) );
-                
-                
-                EditingModalGraphMouse gm = new EditingModalGraphMouse(vv.getRenderContext(),vertexFactory,edgeFactory);
-                vv.setGraphMouse(gm);
-                JMenuItem item = new JMenuItem();
-                
-                
-                JFrame frame = new JFrame("HollyWood Universe");
-                frame.getContentPane().add(vv);
+         JFrame frame = new JFrame("HollyWood Universe");
+        try {
+            vertexFactory = new Factory<Actor>() {
+                public Actor create() {
+                    return new Actor();
+                }
+            };
+            edgeFactory = new Factory<String>() {
+                public String create() {
+                    return "E" + edgeCount++;
+                }
+            };
 
-                frame.pack();
-                frame.setLocationRelativeTo(null);
-                frame.setVisible(true);  
+            Layout<Actor, String> layout = new CircleLayout(g);
+            layout.setSize(new Dimension(300, 300));
+            VisualizationViewer<Actor, String> vv = new VisualizationViewer<Actor, String>(layout);
+            vv.getRenderContext().setVertexLabelTransformer(new ToStringLabeller());
+            vv.getRenderContext().setEdgeLabelTransformer(new ToStringLabeller());
+            vv.setPreferredSize(new Dimension(500, 500));
+
+            EditingModalGraphMouse gm = new EditingModalGraphMouse(vv.getRenderContext(), vertexFactory, edgeFactory);
+            vv.setGraphMouse(gm);
+            JMenuItem item = new JMenuItem();
+
+            frame.getContentPane().add(vv);
+        } catch (NullPointerException e) {
+            System.out.println("entro al nullpointerexception");
+            JLabel mensaje = new JLabel("No se ha agregado nada al mapa");
+            mensaje.setHorizontalAlignment(SwingConstants.CENTER);
+            frame.getContentPane().add(mensaje);
+        }
+        frame.pack();
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
                 
     }//GEN-LAST:event_jLabel15MouseClicked
 
@@ -1294,7 +1320,16 @@ public class P4_Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jl_b_actor_agregarRelacion1MouseClicked
 
     private void jl_b_actor_agregarPelicula1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_actor_agregarPelicula1MouseClicked
-        // TODO add your handling code here:
+       modificando = false;
+        jl_pelicula_titulo.setIcon(new ImageIcon("./Resources/Interface/logo_pelicula.png"));
+        jl_b_pelicula_guardarCambios.setIcon(new ImageIcon("./Resources/Interface/button_guardarCambios.png"));
+        jTF_pelicula_nombre.setText("");
+        jTF_pelicula_estudio.setText("");
+        jS_pelicula_anio.setValue(2000);
+        jD_pelicula.setTitle("AGREGAR NUEVA PELICULA");
+        jD_pelicula.pack();
+        jD_pelicula.setLocationRelativeTo(null);
+        jD_pelicula.setVisible(true);
     }//GEN-LAST:event_jl_b_actor_agregarPelicula1MouseClicked
 
     private void jl_b_actor_guardarCambios1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_b_actor_guardarCambios1MouseClicked
@@ -1478,4 +1513,5 @@ public class P4_Main extends javax.swing.JFrame {
     Factory <Actor> vertexFactory;
     Factory <String> edgeFactory;
     Stack historial;
+    ArrayList <Movie> movies_actorActual = new ArrayList();
 }
