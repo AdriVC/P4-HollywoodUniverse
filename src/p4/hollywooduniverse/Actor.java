@@ -58,5 +58,9 @@ public class Actor {
         
     }
     
+    public ArrayList <Movie> getMovies(){
+        return movies;
+    }
+    
     
 }
